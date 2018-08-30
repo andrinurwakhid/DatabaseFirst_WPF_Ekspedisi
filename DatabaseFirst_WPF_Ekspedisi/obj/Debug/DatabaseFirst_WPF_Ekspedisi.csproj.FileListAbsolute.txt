@@ -12,7 +12,7 @@ D:\PT Mitra Integrasi Informatika\Bootcamp\Materi\9 DatabaseFirst WPF Ekspedisi\
 D:\PT Mitra Integrasi Informatika\Bootcamp\Materi\9 DatabaseFirst WPF Ekspedisi\DatabaseFirst_WPF_Ekspedisi\DatabaseFirst_WPF_Ekspedisi\obj\Debug\DatabaseFirst_WPF_Ekspedisi.csproj.GenerateResource.Cache
 D:\PT Mitra Integrasi Informatika\Bootcamp\Materi\9 DatabaseFirst WPF Ekspedisi\DatabaseFirst_WPF_Ekspedisi\DatabaseFirst_WPF_Ekspedisi\obj\Debug\DatabaseFirst_WPF_Ekspedisi.exe
 D:\PT Mitra Integrasi Informatika\Bootcamp\Materi\9 DatabaseFirst WPF Ekspedisi\DatabaseFirst_WPF_Ekspedisi\DatabaseFirst_WPF_Ekspedisi\obj\Debug\DatabaseFirst_WPF_Ekspedisi.pdb
-D:\PT Mitra Integrasi Informatika\Bootcamp\Materi\9 DatabaseFirst WPF Ekspedisi\DatabaseFirst_WPF_Ekspedisi\DatabaseFirst_WPF_Ekspedisi\obj\Debug\Window1.g.cs
-D:\PT Mitra Integrasi Informatika\Bootcamp\Materi\9 DatabaseFirst WPF Ekspedisi\DatabaseFirst_WPF_Ekspedisi\DatabaseFirst_WPF_Ekspedisi\obj\Debug\Window1.baml
-D:\PT Mitra Integrasi Informatika\Bootcamp\Materi\9 DatabaseFirst WPF Ekspedisi\DatabaseFirst_WPF_Ekspedisi\DatabaseFirst_WPF_Ekspedisi\obj\Debug\dasboard.g.cs
-D:\PT Mitra Integrasi Informatika\Bootcamp\Materi\9 DatabaseFirst WPF Ekspedisi\DatabaseFirst_WPF_Ekspedisi\DatabaseFirst_WPF_Ekspedisi\obj\Debug\dasboard.baml
+D:\PT Mitra Integrasi Informatika\Bootcamp\Materi\9 DatabaseFirst WPF Ekspedisi\DatabaseFirst_WPF_Ekspedisi\DatabaseFirst_WPF_Ekspedisi\obj\Debug\Windows\dasboard.g.cs
+D:\PT Mitra Integrasi Informatika\Bootcamp\Materi\9 DatabaseFirst WPF Ekspedisi\DatabaseFirst_WPF_Ekspedisi\DatabaseFirst_WPF_Ekspedisi\obj\Debug\Windows\Window1.g.cs
+D:\PT Mitra Integrasi Informatika\Bootcamp\Materi\9 DatabaseFirst WPF Ekspedisi\DatabaseFirst_WPF_Ekspedisi\DatabaseFirst_WPF_Ekspedisi\obj\Debug\Windows\dasboard.baml
+D:\PT Mitra Integrasi Informatika\Bootcamp\Materi\9 DatabaseFirst WPF Ekspedisi\DatabaseFirst_WPF_Ekspedisi\DatabaseFirst_WPF_Ekspedisi\obj\Debug\Windows\Window1.baml

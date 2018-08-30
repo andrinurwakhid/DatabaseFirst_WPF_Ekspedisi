@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="82f1bb7f0838406c8122f2be0b499006" Name="Diagram1">
+        <EntityTypeShape EntityType="ExpeditionModel.ASSURANCE" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ExpeditionModel.BRANCH" Width="1.5" PointX="3" PointY="3.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="ExpeditionModel.CATEGORy" Width="1.5" PointX="3" PointY="6.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="ExpeditionModel.EMPLOYEE" Width="1.5" PointX="3" PointY="9.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="ExpeditionModel.PACKAGE" Width="1.5" PointX="3" PointY="11.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ExpeditionModel.SHIPPING" Width="1.5" PointX="5.25" PointY="1.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="ExpeditionModel.STATUS_SHIPPINGS" Width="1.5" PointX="3" PointY="14.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="ExpeditionModel.Warehouse" Width="1.5" PointX="0.75" PointY="3.375" IsExpanded="true" />
+        <AssociationConnector Association="ExpeditionModel.FK_BRANCH" ManuallyRouted="false" />
+        <AssociationConnector Association="ExpeditionModel.FK_WAREHOUSE" ManuallyRouted="false" />
+        <AssociationConnector Association="ExpeditionModel.FK_CATEGORI" ManuallyRouted="false" />
+        <AssociationConnector Association="ExpeditionModel.FK_EMPLOYEE" ManuallyRouted="false" />
+        <AssociationConnector Association="ExpeditionModel.FK_PACKAGE" ManuallyRouted="false" />
+        <AssociationConnector Association="ExpeditionModel.FK_STATUS_SHIPPING" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

@@ -14,7 +14,7 @@
             </LinearGradientBrush>
         </Grid.OpacityMask>
         <Grid.Background>
-            <ImageBrush ImageSource="ekspedisi.jpg"/>
+            <ImageBrush ImageSource="Images/ekspedisi.jpg"/>
         </Grid.Background>
         <Rectangle Fill="#FF5E71D6" Height="316" Margin="209,115,183,0" Stroke="Black" Width="488" HorizontalAlignment="Center" VerticalAlignment="Top"/>
         <Label x:Name="label" Content="E K S P E D I S I &quot; C E P A T &quot;" VerticalAlignment="Top" FontFamily="Stencil" Background="#FF5E71D6" BorderThickness="2" AllowDrop="True" Foreground="#FFEDFF1A" FontSize="53" RenderTransformOrigin="0.351,0.026" Width="894" Height="69" HorizontalAlignment="Center" HorizontalContentAlignment="Center" Margin="0,0,-0.4,0">
