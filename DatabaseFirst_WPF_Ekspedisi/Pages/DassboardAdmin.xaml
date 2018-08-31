@@ -5,8 +5,14 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:DatabaseFirst_WPF_Ekspedisi.Pages"
         mc:Ignorable="d"
-        Title="DassboardAdmin" Height="300" Width="300">
+        Title="DassboardAdmin" Height="748.5" Width="1121">
     <Grid>
-        
+        <Grid.Background>
+            <LinearGradientBrush EndPoint="0.5,1" MappingMode="RelativeToBoundingBox" StartPoint="0.5,0">
+                <GradientStop Color="#FF2B2BE5"/>
+                <GradientStop Color="White" Offset="1"/>
+            </LinearGradientBrush>
+        </Grid.Background>
+
     </Grid>
 </Window>

@@ -4,6 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using DatabaseFirst_WPF_Ekspedisi.Models;
+using System.Data.SqlClient;
+using System.Text.RegularExpressions;
+using System.Data;
 
 namespace DatabaseFirst_WPF_Ekspedisi
 {
@@ -16,35 +19,31 @@ namespace DatabaseFirst_WPF_Ekspedisi
         {
 
             bool cek = false;
-            var temp = context.EMPLOYEES.FirstOrDefault();
-            try
+            SqlConnection con = new SqlConnection("Server=DESKTOP-VCT2PRF;Database=Expedition;Trusted_Connection=true");
+            con.Open();
+
+            SqlCommand cmd = new SqlCommand("Select * from EMPLOYEES where USERNAME='" + username + "'  and PASSWORD='" + password + "'", con);
+            cmd.CommandType = CommandType.Text;
+
+            SqlDataAdapter adapter = new SqlDataAdapter();
+            adapter.SelectCommand = cmd;
+            DataSet dataSet = new DataSet();
+            adapter.Fill(dataSet);
+
+            if (dataSet.Tables[0].Rows.Count > 0)
             {
-                if (temp.USERNAME == username && temp.PASSWORD == password)
-                {
-                    cek = true;
-                }
+                cek = true;
             }
-            catch (Exception context)
+            else
             {
                 cek = false;
-                context.GetBaseException();
             }
             return cek;
         }
 
         // =========================================== INSERT =============================================
-        public void Insert()
+        public void Insert(string data1,string data2,string data3,string data4)
         {
-            Console.Clear();
-            System.Console.Write("NAME        : ");
-            string data1 = System.Console.ReadLine();
-            System.Console.Write("POSITION    : ");
-            string data2 = System.Console.ReadLine();
-            System.Console.Write("USERNAME    : ");
-            string data3 = System.Console.ReadLine();
-            System.Console.Write("PASSWORD    : ");
-            string data4 = System.Console.ReadLine();
-
             EMPLOYEE call = new EMPLOYEE();
             {
                 call.NAME = data1;

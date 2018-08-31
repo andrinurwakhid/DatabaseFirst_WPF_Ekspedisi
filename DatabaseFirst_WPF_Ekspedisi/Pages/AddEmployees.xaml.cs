@@ -11,6 +11,9 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using DatabaseFirst_WPF_Ekspedisi.Controllers;
+using DatabaseFirst_WPF_Ekspedisi.Pages;
+using DatabaseFirst_WPF_Ekspedisi.Models;
 
 namespace DatabaseFirst_WPF_Ekspedisi.Pages
 {
@@ -33,7 +36,16 @@ namespace DatabaseFirst_WPF_Ekspedisi.Pages
 
         private void save_Click(object sender, RoutedEventArgs e)
         {
-
+            EmployeesController controller = new EmployeesController();
+            string data1 = namebox.Text;
+            string data2 = positionbox.Text;
+            string data3 = usernamebox.Text;
+            string data4 = passwordbox.Text;
+            controller.Insert(data1,data2,data3,data4);
+            MessageBox.Show("Register Success", "Message", MessageBoxButton.OK, MessageBoxImage.Information);
+            this.Hide();
+            MainWindow hasil = new MainWindow();
+            hasil.ShowDialog();
         }
     }
 }
