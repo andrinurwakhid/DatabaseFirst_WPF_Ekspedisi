@@ -191,6 +191,11 @@
     <Resource Include="Images\user.png" />
     <Resource Include="Images\nolkm.jpg" />
     <Resource Include="Images\menembus-langit.jpg" />
+    <Resource Include="Images\delivery-truck.jpg" />
+    <Resource Include="Images\admin-settings-male-filled.png" />
+    <Content Include="Images\Admin.jpg" />
+    <Resource Include="Images\admin2.jpg" />
+    <Resource Include="Images\Automation-icon.png" />
     <Content Include="Models\Model1.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>Model1.edmx</DependentUpon>

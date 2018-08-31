@@ -13,6 +13,19 @@
                 <GradientStop Color="White" Offset="1"/>
             </LinearGradientBrush>
         </Grid.Background>
+        <Label x:Name="label2" Content="E K S P E D I S I&#xA;     &quot;CEPAT&quot;" HorizontalAlignment="Left" VerticalAlignment="Top" FontFamily="Segoe UI Black" FontSize="36" HorizontalContentAlignment="Center" Width="1114" Background="#FF020410" Foreground="#FFD7E4F2" Height="112"/>
+        <Button x:Name="shipping" Content="" HorizontalAlignment="Left" Margin="129,250,0,0" VerticalAlignment="Top" Width="329" Height="300">
+            <Button.Background>
+                <ImageBrush ImageSource="/DatabaseFirst_WPF_Ekspedisi;component/Images/delivery-truck.jpg"/>
+            </Button.Background>
+        </Button>
+        <Button x:Name="app_master" Content="" HorizontalAlignment="Left" Margin="657,250,0,0" VerticalAlignment="Top" Width="329" Height="300">
+            <Button.Background>
+                <ImageBrush ImageSource="/DatabaseFirst_WPF_Ekspedisi;component/Images/admin2.jpg"/>
+            </Button.Background>
+        </Button>
+        <Label x:Name="label" Content="SHIPPING" HorizontalAlignment="Left" Margin="129,555,0,0" VerticalAlignment="Top" Height="67" Width="329" FontSize="41" HorizontalContentAlignment="Center" ForceCursor="True" FontWeight="ExtraBold"/>
+        <Label x:Name="label_Copy" Content="MANAGE APPS" HorizontalAlignment="Left" Margin="657,555,0,0" VerticalAlignment="Top" Height="67" Width="329" FontSize="41" HorizontalContentAlignment="Center" ForceCursor="True" FontWeight="ExtraBold"/>
 
     </Grid>
 </Window>
