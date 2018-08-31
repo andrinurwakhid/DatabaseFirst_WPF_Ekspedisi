@@ -23,5 +23,17 @@ namespace DatabaseFirst_WPF_Ekspedisi.Pages
         {
             InitializeComponent();
         }
+
+        private void button_Copy_Click(object sender, RoutedEventArgs e)
+        {
+            this.Hide();
+            MainWindow hasil = new MainWindow();
+            hasil.ShowDialog();
+        }
+
+        private void save_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
