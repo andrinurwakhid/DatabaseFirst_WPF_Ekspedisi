@@ -140,6 +140,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Pages\ManageApps.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Pages\AddEmployees.xaml.cs">
@@ -148,6 +152,10 @@
     <Compile Include="Pages\DassboardAdmin.xaml.cs">
       <DependentUpon>DassboardAdmin.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Pages\ManageApps.xaml.cs">
+      <DependentUpon>ManageApps.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Shipping.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
