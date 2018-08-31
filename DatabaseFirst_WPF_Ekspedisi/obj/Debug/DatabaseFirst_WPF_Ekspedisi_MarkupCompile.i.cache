@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 D:\PT Mitra Integrasi Informatika\Bootcamp\Materi\9 DatabaseFirst WPF Ekspedisi\DatabaseFirst_WPF_Ekspedisi\DatabaseFirst_WPF_Ekspedisi\App.xaml
-2952814325
-21750853300
-22755108479
+21768869171
+21628168987
+22-723139280
 18-361197770
-Pages\Dasboard.xaml;MainWindow.xaml;
+MainWindow.xaml;Pages\DassboardAdmin.xaml;
 
-True
+False
 

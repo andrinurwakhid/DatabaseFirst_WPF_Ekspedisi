@@ -12,7 +12,10 @@ D:\PT Mitra Integrasi Informatika\Bootcamp\Materi\9 DatabaseFirst WPF Ekspedisi\
 D:\PT Mitra Integrasi Informatika\Bootcamp\Materi\9 DatabaseFirst WPF Ekspedisi\DatabaseFirst_WPF_Ekspedisi\DatabaseFirst_WPF_Ekspedisi\obj\Debug\DatabaseFirst_WPF_Ekspedisi.csproj.GenerateResource.Cache
 D:\PT Mitra Integrasi Informatika\Bootcamp\Materi\9 DatabaseFirst WPF Ekspedisi\DatabaseFirst_WPF_Ekspedisi\DatabaseFirst_WPF_Ekspedisi\obj\Debug\DatabaseFirst_WPF_Ekspedisi.exe
 D:\PT Mitra Integrasi Informatika\Bootcamp\Materi\9 DatabaseFirst WPF Ekspedisi\DatabaseFirst_WPF_Ekspedisi\DatabaseFirst_WPF_Ekspedisi\obj\Debug\DatabaseFirst_WPF_Ekspedisi.pdb
-D:\PT Mitra Integrasi Informatika\Bootcamp\Materi\9 DatabaseFirst WPF Ekspedisi\DatabaseFirst_WPF_Ekspedisi\DatabaseFirst_WPF_Ekspedisi\obj\Debug\Windows\dasboard.g.cs
-D:\PT Mitra Integrasi Informatika\Bootcamp\Materi\9 DatabaseFirst WPF Ekspedisi\DatabaseFirst_WPF_Ekspedisi\DatabaseFirst_WPF_Ekspedisi\obj\Debug\Windows\Window1.g.cs
-D:\PT Mitra Integrasi Informatika\Bootcamp\Materi\9 DatabaseFirst WPF Ekspedisi\DatabaseFirst_WPF_Ekspedisi\DatabaseFirst_WPF_Ekspedisi\obj\Debug\Windows\dasboard.baml
-D:\PT Mitra Integrasi Informatika\Bootcamp\Materi\9 DatabaseFirst WPF Ekspedisi\DatabaseFirst_WPF_Ekspedisi\DatabaseFirst_WPF_Ekspedisi\obj\Debug\Windows\Window1.baml
+D:\PT Mitra Integrasi Informatika\Bootcamp\Materi\9 DatabaseFirst WPF Ekspedisi\DatabaseFirst_WPF_Ekspedisi\DatabaseFirst_WPF_Ekspedisi\obj\Debug\DatabaseFirst_WPF_Ekspedisi_Content.g.cs
+D:\PT Mitra Integrasi Informatika\Bootcamp\Materi\9 DatabaseFirst WPF Ekspedisi\DatabaseFirst_WPF_Ekspedisi\DatabaseFirst_WPF_Ekspedisi\bin\Debug\EntityFramework.dll
+D:\PT Mitra Integrasi Informatika\Bootcamp\Materi\9 DatabaseFirst WPF Ekspedisi\DatabaseFirst_WPF_Ekspedisi\DatabaseFirst_WPF_Ekspedisi\bin\Debug\EntityFramework.SqlServer.dll
+D:\PT Mitra Integrasi Informatika\Bootcamp\Materi\9 DatabaseFirst WPF Ekspedisi\DatabaseFirst_WPF_Ekspedisi\DatabaseFirst_WPF_Ekspedisi\bin\Debug\EntityFramework.xml
+D:\PT Mitra Integrasi Informatika\Bootcamp\Materi\9 DatabaseFirst WPF Ekspedisi\DatabaseFirst_WPF_Ekspedisi\DatabaseFirst_WPF_Ekspedisi\bin\Debug\EntityFramework.SqlServer.xml
+D:\PT Mitra Integrasi Informatika\Bootcamp\Materi\9 DatabaseFirst WPF Ekspedisi\DatabaseFirst_WPF_Ekspedisi\DatabaseFirst_WPF_Ekspedisi\obj\Debug\Pages\DassboardAdmin.g.cs
+D:\PT Mitra Integrasi Informatika\Bootcamp\Materi\9 DatabaseFirst WPF Ekspedisi\DatabaseFirst_WPF_Ekspedisi\DatabaseFirst_WPF_Ekspedisi\obj\Debug\Pages\DassboardAdmin.baml

@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using DatabaseFirst_WPF_Ekspedisi.Pages;
 
 namespace DatabaseFirst_WPF_Ekspedisi
 {
@@ -31,24 +32,23 @@ namespace DatabaseFirst_WPF_Ekspedisi
             Close();
         }
 
+        EmployeesController employeeC = new EmployeesController();
         private void login_Click(object sender, RoutedEventArgs e)
         {
-
-            string username, password;
-
-            username = this.usernamebox.Text;
-            password = this.passwordBox.Password;
-
-            if (username == "admin" && password == "admin")
+            
+            if (employeeC.loginEmployees(usernamebox.Text, passwordBox.Password) == true)
             {
-                MessageBox.Show("Login Success !");
+                MessageBox.Show("Login Success", "Warning", MessageBoxButton.OK, MessageBoxImage.Information);
                 this.Hide();
-                dasboard das = new dasboard();
-                das.ShowDialog();
+                DassboardAdmin admin = new DassboardAdmin();
+                admin.ShowDialog();
             }
             else
             {
-                MessageBox.Show("Wrong Username or password.\nPlease Try Again.");
+                MessageBox.Show("Username and Password not match", "Warning", MessageBoxButton.OK, MessageBoxImage.Warning);
+                passwordBox.Clear();
+                usernamebox.Clear();
+                usernamebox.Focus();
             }
         }
     }
