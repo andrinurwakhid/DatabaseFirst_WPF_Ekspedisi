@@ -36,7 +36,7 @@ namespace DatabaseFirst_WPF_Ekspedisi
         private void login_Click(object sender, RoutedEventArgs e)
         {
             
-            if (employeeC.loginEmployees(usernamebox.Text, passwordBox.Password) == true)
+            if (employeeC.login(usernamebox.Text, passwordBox.Password) == true)
             {
                 MessageBox.Show("Login Success", "Warning", MessageBoxButton.OK, MessageBoxImage.Information);
                 this.Hide();
@@ -50,6 +50,13 @@ namespace DatabaseFirst_WPF_Ekspedisi
                 usernamebox.Clear();
                 usernamebox.Focus();
             }
+        }
+
+        private void register_Click(object sender, RoutedEventArgs e)
+        {
+            this.Hide();
+            AddEmployees addemployee = new AddEmployees();
+            addemployee.ShowDialog();
         }
     }
 }
