@@ -13,6 +13,8 @@ using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using DatabaseFirst_WPF_Ekspedisi.Models;
 using System.Data.Entity.Validation;
+using DatabaseFirst_WPF_Ekspedisi.Controllers;
+using DatabaseFirst_WPF_Ekspedisi.Views;
 
 namespace DatabaseFirst_WPF_Ekspedisi.Pages
 {
@@ -22,6 +24,7 @@ namespace DatabaseFirst_WPF_Ekspedisi.Pages
     public partial class ManageApps : Window
     {
         ExpeditionEntities context = new ExpeditionEntities();
+        WarehouseController wareh = new WarehouseController();
         public ManageApps()
         {
             InitializeComponent();
@@ -36,6 +39,7 @@ namespace DatabaseFirst_WPF_Ekspedisi.Pages
             Viewstatshipping(datastatshiping);
             ViewShippings(datashipping);
             ViewAssurances(dataassurance);
+            LoadGridCombo();
         }
 
         // CLEAR FUNCTIONS ===================================================================================================================================================
@@ -45,7 +49,14 @@ namespace DatabaseFirst_WPF_Ekspedisi.Pages
             positionbox.Text = "";
             idbox.Text = "";
         }
-
+        private void clearbranch()
+        {
+            aidbox.Text = "";
+            aprovincebox.Text = "";
+            asubdistrictbox.Text = "";
+            alocationbox.Text = "";
+            awarehousebox.Text = "";
+        }
         // EMPLOYEES ================================================================================================================================================
 
         // VIEW
@@ -123,22 +134,35 @@ namespace DatabaseFirst_WPF_Ekspedisi.Pages
         // DELETE
         private void deletebtn_Click(object sender, RoutedEventArgs e)
         {
-            object item = dataemployees.SelectedItem;
-            string temp_id = (dataemployees.SelectedCells[0].Column.GetCellContent(item) as TextBlock).Text;
+            if ( MessageBox.Show("Are You Sure ?", "Information", MessageBoxButton.YesNo, MessageBoxImage.Information) == MessageBoxResult.Yes)
+            {
+                object item = dataemployees.SelectedItem;
+                string temp_id = (dataemployees.SelectedCells[0].Column.GetCellContent(item) as TextBlock).Text;
+                int id = Convert.ToInt32(temp_id);
+                EMPLOYEE datadel = SearchByIdEmployee(id);
+                context.Entry(datadel).State = System.Data.Entity.EntityState.Deleted;
+                context.SaveChanges();
+                clearemployee();
+                this.ViewEmployees(dataemployees);
+            }
+            else 
+            {
 
-            int id = Convert.ToInt32(temp_id);
-
-            EMPLOYEE datadel = SearchByIdEmployee(id);
-            context.Entry(datadel).State = System.Data.Entity.EntityState.Deleted;
-            context.SaveChanges();
-            clearemployee();
-            this.ViewEmployees(dataemployees);
-            MessageBox.Show("Data Deleted !", "Information", MessageBoxButton.OK, MessageBoxImage.Information);
+            }
         }
 
-
-
         // BRANCHS ===================================================================================================================================================
+
+        private BRANCH SearchByIdBranch(int id)
+        {
+            var dataid = context.BRANCHS.Find(id);
+            if (dataid == null)
+            {
+                MessageBox.Show("ID " + id + " not found", "Information", MessageBoxButton.OK, MessageBoxImage.Information);
+            }
+
+            return dataid;
+        }
         // VIEW
         private void ViewBranch(DataGrid DG)
         {
@@ -162,11 +186,30 @@ namespace DatabaseFirst_WPF_Ekspedisi.Pages
                 string data5 = (databranch.SelectedCells[4].Column.GetCellContent(item) as TextBlock).Text;
                 alocationbox.Text = data5;
                 string data6 = (databranch.SelectedCells[5].Column.GetCellContent(item) as TextBlock).Text;
-                awarehouseidbox.Text = data6;
+                awarehousebox.Text = data6;
             }
             catch (Exception ex)
             {
                 System.Console.Write(ex.InnerException);
+            }
+        }
+        // DELETE
+        private void Adelete_Click(object sender, RoutedEventArgs e)
+        {
+            if (MessageBox.Show("Are You Sure ?", "Information", MessageBoxButton.YesNo, MessageBoxImage.Information) == MessageBoxResult.Yes)
+            {
+                object item = databranch.SelectedItem;
+                string temp_id = (databranch.SelectedCells[0].Column.GetCellContent(item) as TextBlock).Text;
+                int id = Convert.ToInt32(temp_id);
+                BRANCH datadel = SearchByIdBranch(id);
+                context.Entry(datadel).State = System.Data.Entity.EntityState.Deleted;
+                context.SaveChanges();
+                clearbranch();
+                this.ViewBranch(databranch);
+            }
+            else
+            {
+
             }
         }
 
@@ -220,7 +263,7 @@ namespace DatabaseFirst_WPF_Ekspedisi.Pages
                 string data1 = (dataassurance.SelectedCells[0].Column.GetCellContent(item) as TextBlock).Text;
                 eidbox.Text = data1;
                 string data2 = (dataassurance.SelectedCells[1].Column.GetCellContent(item) as TextBlock).Text;
-                etypebox.Text = data2;
+                etypescombobox.Text = data2;
                 string data3 = (dataassurance.SelectedCells[2].Column.GetCellContent(item) as TextBlock).Text;
                 epricebox.Text = data3;
             }
@@ -314,13 +357,7 @@ namespace DatabaseFirst_WPF_Ekspedisi.Pages
         {
             DG.ItemsSource = context.SHIPPINGS.OrderBy(p => p.ID).ToList();
         }
-
-
-
-
-
-
-
+        
         private void logout_Click(object sender, RoutedEventArgs e)
         {
             this.Hide();
@@ -332,6 +369,22 @@ namespace DatabaseFirst_WPF_Ekspedisi.Pages
         {
             AddEmployees add = new AddEmployees();
             add.Show();
+        }
+        public void LoadGridCombo()
+        {
+            awarehousebox.DisplayMemberPath = "NAME";
+            awarehousebox.SelectedValuePath = "WAREHOUSE_ID";
+            awarehousebox.ItemsSource = context.WAREHOUSES.ToList();
+            
+            etypescombobox.DisplayMemberPath = "TYPES";
+            etypescombobox.SelectedValuePath = "TYPES";
+            etypescombobox.ItemsSource = context.ASSURANCES.ToList();
+        }
+
+        private void addbrbtn_Click(object sender, RoutedEventArgs e)
+        {
+            AddBranch addbranch = new AddBranch();
+            addbranch.Show();
         }
     }
 }

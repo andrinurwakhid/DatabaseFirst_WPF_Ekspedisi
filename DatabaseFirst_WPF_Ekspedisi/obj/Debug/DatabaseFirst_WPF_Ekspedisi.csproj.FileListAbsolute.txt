@@ -27,3 +27,5 @@ D:\PT Mitra Integrasi Informatika\Bootcamp\Materi\9 DatabaseFirst WPF Ekspedisi\
 D:\PT Mitra Integrasi Informatika\Bootcamp\Materi\9 DatabaseFirst WPF Ekspedisi\DatabaseFirst_WPF_Ekspedisi\DatabaseFirst_WPF_Ekspedisi\obj\Debug\DatabaseFirst_WPF_Ekspedisi.exe
 D:\PT Mitra Integrasi Informatika\Bootcamp\Materi\9 DatabaseFirst WPF Ekspedisi\DatabaseFirst_WPF_Ekspedisi\DatabaseFirst_WPF_Ekspedisi\obj\Debug\DatabaseFirst_WPF_Ekspedisi.pdb
 D:\PT Mitra Integrasi Informatika\Bootcamp\Materi\9 DatabaseFirst WPF Ekspedisi\DatabaseFirst_WPF_Ekspedisi\DatabaseFirst_WPF_Ekspedisi\obj\Debug\DatabaseFirst_WPF_Ekspedisi.csprojResolveAssemblyReference.cache
+D:\PT Mitra Integrasi Informatika\Bootcamp\Materi\9 DatabaseFirst WPF Ekspedisi\DatabaseFirst_WPF_Ekspedisi\DatabaseFirst_WPF_Ekspedisi\obj\Debug\Views\AddBranch.g.cs
+D:\PT Mitra Integrasi Informatika\Bootcamp\Materi\9 DatabaseFirst WPF Ekspedisi\DatabaseFirst_WPF_Ekspedisi\DatabaseFirst_WPF_Ekspedisi\obj\Debug\Views\AddBranch.baml

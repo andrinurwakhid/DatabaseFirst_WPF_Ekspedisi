@@ -11,21 +11,8 @@ namespace DatabaseFirst_WPF_Ekspedisi.Controllers
     {
         ExpeditionEntities context = new ExpeditionEntities();
         // =========================================== INSERT =============================================
-        public void Insert()
+        public void Insert(string data1, string data2, string data3, string data4,string data5,int data6)
         {
-            Console.Clear();
-            System.Console.Write("NAME            : ");
-            string data1 = System.Console.ReadLine();
-            System.Console.Write("PROVINCE        : ");
-            string data2 = System.Console.ReadLine();
-            System.Console.Write("REGENCY         : ");
-            string data3 = System.Console.ReadLine();
-            System.Console.Write("SUB DISTRICT    : ");
-            string data4 = System.Console.ReadLine();
-            System.Console.Write("LOCATION        : ");
-            string data5 = System.Console.ReadLine();
-            System.Console.Write("WAREHOUSE ID    : ");
-            int data6 = Convert.ToInt32(System.Console.ReadLine());
 
             BRANCH call = new BRANCH();
             {
