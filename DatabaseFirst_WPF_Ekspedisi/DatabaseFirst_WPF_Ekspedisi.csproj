@@ -132,30 +132,43 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Page Include="Pages\AddEmployees.xaml">
+    <Page Include="Views\AddEmployees.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Pages\DassboardAdmin.xaml">
+    <Page Include="Views\DassboardAdmin.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Pages\ManageApps.xaml">
+    <Page Include="Views\example.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\ManageApps.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Shipping.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Pages\AddEmployees.xaml.cs">
+    <Compile Include="Views\AddEmployees.xaml.cs">
       <DependentUpon>AddEmployees.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Pages\DassboardAdmin.xaml.cs">
+    <Compile Include="Views\DassboardAdmin.xaml.cs">
       <DependentUpon>DassboardAdmin.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Pages\ManageApps.xaml.cs">
+    <Compile Include="Views\example.xaml.cs">
+      <DependentUpon>example.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ManageApps.xaml.cs">
       <DependentUpon>ManageApps.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Pages\Shipping.cs" />
+    <Compile Include="Views\Shipping.xaml.cs">
+      <DependentUpon>Shipping.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -201,9 +214,11 @@
     <Resource Include="Images\menembus-langit.jpg" />
     <Resource Include="Images\delivery-truck.jpg" />
     <Resource Include="Images\admin-settings-male-filled.png" />
+    <Resource Include="Images\add.jpg" />
     <Content Include="Images\Admin.jpg" />
     <Resource Include="Images\admin2.jpg" />
     <Resource Include="Images\Automation-icon.png" />
+    <Resource Include="Images\LogoutIcon.jpg" />
     <Content Include="Models\Model1.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>Model1.edmx</DependentUpon>

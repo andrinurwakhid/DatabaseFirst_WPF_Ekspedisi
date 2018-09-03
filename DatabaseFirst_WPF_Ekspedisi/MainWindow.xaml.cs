@@ -54,7 +54,6 @@ namespace DatabaseFirst_WPF_Ekspedisi
 
         private void register_Click(object sender, RoutedEventArgs e)
         {
-            this.Hide();
             AddEmployees addemployee = new AddEmployees();
             addemployee.ShowDialog();
         }

@@ -44,8 +44,6 @@ namespace DatabaseFirst_WPF_Ekspedisi.Pages
             controller.Insert(data1,data2,data3,data4);
             MessageBox.Show("Register Success", "Message", MessageBoxButton.OK, MessageBoxImage.Information);
             this.Hide();
-            MainWindow hasil = new MainWindow();
-            hasil.ShowDialog();
         }
     }
 }

@@ -15,11 +15,11 @@ using System.Windows.Shapes;
 namespace DatabaseFirst_WPF_Ekspedisi.Pages
 {
     /// <summary>
-    /// Interaction logic for DassboardAdmin.xaml
+    /// Interaction logic for Shipping.xaml
     /// </summary>
-    public partial class DassboardAdmin : Window
+    public partial class Shipping : Window
     {
-        public DassboardAdmin()
+        public Shipping()
         {
             InitializeComponent();
         }

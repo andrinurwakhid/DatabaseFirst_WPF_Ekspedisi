@@ -15,11 +15,11 @@ using System.Windows.Shapes;
 namespace DatabaseFirst_WPF_Ekspedisi.Pages
 {
     /// <summary>
-    /// Interaction logic for ManageApps.xaml
+    /// Interaction logic for example.xaml
     /// </summary>
-    public partial class ManageApps : Window
+    public partial class example : Window
     {
-        public ManageApps()
+        public example()
         {
             InitializeComponent();
         }
