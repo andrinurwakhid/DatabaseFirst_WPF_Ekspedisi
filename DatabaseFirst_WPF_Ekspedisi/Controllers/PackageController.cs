@@ -11,14 +11,8 @@ namespace DatabaseFirst_WPF_Ekspedisi.Controllers
     {
         ExpeditionEntities context = new ExpeditionEntities();
         // =========================================== INSERT =============================================
-        public void Insert()
+        public void Insert(string data1, int data2)
         {
-            Console.Clear();
-            System.Console.Write("NAME            : ");
-            string data1 = System.Console.ReadLine();
-            System.Console.Write("PRICE           : ");
-            int data2 = Convert.ToInt32(System.Console.ReadLine());
-
             PACKAGE call = new PACKAGE();
             {
                 call.NAME = data1;

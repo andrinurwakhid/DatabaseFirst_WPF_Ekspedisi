@@ -49,5 +49,12 @@ namespace DatabaseFirst_WPF_Ekspedisi.Views
             addwarehousebox.SelectedValuePath = "ID";
             addwarehousebox.ItemsSource = context.ASSURANCES.ToList();
         }
+
+        private void button_Copy_Click(object sender, RoutedEventArgs e)
+        {
+            this.Hide();
+            ManageApps ma = new ManageApps();
+            ma.Show();
+        }
     }
 }

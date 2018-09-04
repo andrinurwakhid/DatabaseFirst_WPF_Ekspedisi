@@ -11,12 +11,8 @@ namespace DatabaseFirst_WPF_Ekspedisi.Controllers
     {
         ExpeditionEntities context = new ExpeditionEntities();
         // =========================================== INSERT =============================================
-        public void Insert()
+        public void Insert(string data1)
         {
-            Console.Clear();
-            System.Console.Write("NAME            : ");
-            string data1 = System.Console.ReadLine();
-
             STATUS_SHIPPINGS call = new STATUS_SHIPPINGS();
             {
                 call.NAME = data1;

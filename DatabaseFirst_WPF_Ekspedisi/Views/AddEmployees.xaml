@@ -8,38 +8,28 @@
         Title="AddEmployees" Height="555" Width="400">
     <Window.Background>
         <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-            <GradientStop Color="#FF1D4DF1" Offset="0.331"/>
+            <GradientStop Color="Black"/>
             <GradientStop Color="White" Offset="1"/>
         </LinearGradientBrush>
     </Window.Background>
-    <Grid Margin="0,0,3.6,-0.4">
+    <Grid Margin="0,0,3.6,-0.4" HorizontalAlignment="Right" Width="390">
         <Grid.RowDefinitions>
             <RowDefinition Height="218*"/>
             <RowDefinition Height="45*"/>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="26*"/>
-            <ColumnDefinition Width="40*"/>
-            <ColumnDefinition Width="41*"/>
-            <ColumnDefinition Width="93*"/>
-            <ColumnDefinition Width="16*"/>
-            <ColumnDefinition Width="20*"/>
-            <ColumnDefinition Width="25*"/>
-            <ColumnDefinition Width="130*"/>
-            <ColumnDefinition Width="0*"/>
+            <ColumnDefinition/>
         </Grid.ColumnDefinitions>
-        <Label x:Name="label1" Content="" HorizontalAlignment="Left" Margin="-2,2,0,0" VerticalAlignment="Top" Width="389" Background="#FF4D8083" Height="104" Grid.ColumnSpan="8"/>
-        <Label x:Name="label" Content="     ADD&#xD;&#xA;EMPLOYEE" HorizontalAlignment="Left" Margin="35.6,2,0,0" VerticalAlignment="Top" FontSize="35" Background="{x:Null}" Height="104" Width="287" TextOptions.TextFormattingMode="Display" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontWeight="ExtraBold" Foreground="#FFD7E4EC" Grid.ColumnSpan="6" Grid.Column="2"/>
-        <Image x:Name="image1" HorizontalAlignment="Left" Height="104" Margin="0,2,0,0" VerticalAlignment="Top" Width="108" Source="/DatabaseFirst_WPF_Ekspedisi;component/Images/user.png" Grid.ColumnSpan="4"/>
-        <TextBox x:Name="namebox" HorizontalAlignment="Left" Height="43" Margin="1.6,148,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="336" FontSize="24" HorizontalContentAlignment="Center" Grid.ColumnSpan="7" Grid.Column="1"/>
-        <TextBox x:Name="passwordbox" HorizontalAlignment="Left" Height="43" Margin="1.6,394,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="336" FontSize="24" HorizontalContentAlignment="Center" Grid.ColumnSpan="7" Grid.Column="1" Grid.RowSpan="2"/>
-        <TextBox x:Name="positionbox" HorizontalAlignment="Left" Height="43" Margin="1.6,229,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="336" RenderTransformOrigin="0.5,3.094" FontSize="24" HorizontalContentAlignment="Center" Grid.ColumnSpan="7" Grid.Column="1"/>
-        <TextBox x:Name="usernamebox" HorizontalAlignment="Left" Height="43" Margin="1.6,312,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="336" FontSize="24" HorizontalContentAlignment="Center" Grid.ColumnSpan="7" Grid.Column="1"/>
-        <Label x:Name="label3" Content="Full Name" HorizontalAlignment="Left" Margin="1.6,111,0,0" VerticalAlignment="Top" Width="336" Height="44" FontSize="30" FontFamily="Perpetua" HorizontalContentAlignment="Center" FontWeight="Bold" Grid.ColumnSpan="7" Grid.Column="1"/>
-        <Label x:Name="label3_Copy2" Content="Password" HorizontalAlignment="Left" Margin="1.6,357,0,0" VerticalAlignment="Top" Width="336" Height="44" FontSize="30" FontFamily="Perpetua" HorizontalContentAlignment="Center" FontWeight="Bold" Grid.ColumnSpan="7" Grid.Column="1"/>
-        <Label x:Name="label3_Copy1" Content="Username" HorizontalAlignment="Left" VerticalAlignment="Top" Width="336" Height="44" FontSize="30" FontFamily="Perpetua" HorizontalContentAlignment="Center" FontWeight="Bold" Margin="1.6,274,0,0" Grid.ColumnSpan="7" Grid.Column="1"/>
-        <Label x:Name="label3_Copy3" Content="Position" HorizontalAlignment="Left" VerticalAlignment="Top" Width="336" Height="44" FontSize="30" FontFamily="Perpetua" HorizontalContentAlignment="Center" FontWeight="Bold" Margin="1.6,192,0,0" Grid.ColumnSpan="7" Grid.Column="1"/>
-        <Button x:Name="save" Content="Save" HorizontalAlignment="Left" Margin="1.6,25,0,0" VerticalAlignment="Top" Width="144" Height="55" FontSize="28" FontWeight="Bold" BorderBrush="#FF05D100" Background="#FF05466B" Foreground="#FFFBFCFD" Click="save_Click" Grid.ColumnSpan="3" Grid.Column="1" Grid.Row="1"/>
-        <Button x:Name="button_Copy" Content="Cancel" HorizontalAlignment="Left" Margin="2,25,0,0" VerticalAlignment="Top" Width="145" Height="55" FontSize="28" FontWeight="Bold" BorderBrush="#FFF93939" Background="#FF05466B" Foreground="#FFFBFCFD" Click="button_Copy_Click" Grid.ColumnSpan="3" Grid.Column="5" Grid.Row="1"/>
+        <TextBox x:Name="namebox" HorizontalAlignment="Left" Height="43" Margin="27,113,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="336" FontSize="24" HorizontalContentAlignment="Center"/>
+        <TextBox x:Name="passwordbox" HorizontalAlignment="Left" Height="43" Margin="27,358,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="336" FontSize="24" HorizontalContentAlignment="Center"/>
+        <TextBox x:Name="positionbox" HorizontalAlignment="Left" Height="43" Margin="27,194,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="336" RenderTransformOrigin="0.5,3.094" FontSize="24" HorizontalContentAlignment="Center"/>
+        <TextBox x:Name="usernamebox" HorizontalAlignment="Left" Height="43" Margin="27,277,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="336" FontSize="24" HorizontalContentAlignment="Center"/>
+        <Label x:Name="label3" Content="Full Name" HorizontalAlignment="Left" Margin="27,76,0,0" VerticalAlignment="Top" Width="336" Height="44" FontSize="30" FontFamily="Perpetua" HorizontalContentAlignment="Center" FontWeight="Bold"/>
+        <Label x:Name="label3_Copy2" Content="Password" HorizontalAlignment="Left" Margin="27,322,0,0" VerticalAlignment="Top" Width="336" Height="44" FontSize="30" FontFamily="Perpetua" HorizontalContentAlignment="Center" FontWeight="Bold"/>
+        <Label x:Name="label3_Copy1" Content="Username" HorizontalAlignment="Left" VerticalAlignment="Top" Width="336" Height="44" FontSize="30" FontFamily="Perpetua" HorizontalContentAlignment="Center" FontWeight="Bold" Margin="27,239,0,0"/>
+        <Label x:Name="label3_Copy3" Content="Position" HorizontalAlignment="Left" VerticalAlignment="Top" Width="336" Height="44" FontSize="30" FontFamily="Perpetua" HorizontalContentAlignment="Center" FontWeight="Bold" Margin="27,157,0,0"/>
+        <Button x:Name="save" Content="Save" HorizontalAlignment="Left" Margin="28,0,0,0" VerticalAlignment="Top" Width="144" Height="55" FontSize="28" FontWeight="Bold" BorderBrush="#FF05D100" Background="#FF1EB620" Foreground="Black" Click="save_Click" Grid.Row="1"/>
+        <Button x:Name="button_Copy" Content="Cancel" HorizontalAlignment="Left" Margin="218,0,0,0" VerticalAlignment="Top" Width="145" Height="55" FontSize="28" FontWeight="Bold" BorderBrush="Red" Background="#FFDF3C30" Foreground="Black" Click="button_Copy_Click" Grid.Row="1"/>
+        <Label x:Name="label1_Copy" Content="ADD EMPLOYEE" HorizontalAlignment="Left" Margin="23,29,0,0" VerticalAlignment="Top" FontFamily="Segoe UI Black" FontSize="26.667" Width="345" Height="49" Foreground="White" HorizontalContentAlignment="Center"/>
     </Grid>
 </Window>

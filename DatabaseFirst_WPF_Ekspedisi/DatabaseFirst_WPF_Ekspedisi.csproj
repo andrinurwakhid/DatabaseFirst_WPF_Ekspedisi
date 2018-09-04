@@ -132,11 +132,31 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="Views\AddAssurance.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\AddBranch.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Views\AddCategory.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\AddEmployees.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\AddPackage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\AddStatShipping.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\AddWarehouse.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -158,11 +178,26 @@
     </Page>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Views\AddAssurance.xaml.cs">
+      <DependentUpon>AddAssurance.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\AddBranch.xaml.cs">
       <DependentUpon>AddBranch.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\AddCategory.xaml.cs">
+      <DependentUpon>AddCategory.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\AddEmployees.xaml.cs">
       <DependentUpon>AddEmployees.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\AddPackage.xaml.cs">
+      <DependentUpon>AddPackage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\AddStatShipping.xaml.cs">
+      <DependentUpon>AddStatShipping.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\AddWarehouse.xaml.cs">
+      <DependentUpon>AddWarehouse.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\DassboardAdmin.xaml.cs">
       <DependentUpon>DassboardAdmin.xaml</DependentUpon>

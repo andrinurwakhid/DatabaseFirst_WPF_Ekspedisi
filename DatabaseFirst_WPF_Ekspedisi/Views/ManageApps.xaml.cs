@@ -52,10 +52,21 @@ namespace DatabaseFirst_WPF_Ekspedisi.Pages
         private void clearbranch()
         {
             aidbox.Text = "";
+            anamebox.Text = "";
             aprovincebox.Text = "";
+            aregencybox.Text = "";
             asubdistrictbox.Text = "";
             alocationbox.Text = "";
             awarehousebox.Text = "";
+        }
+        private void clearwarehouse()
+        {
+            bidbox.Text = "";
+            bnamebox.Text = "";
+            bprovincebox.Text = "";
+            bregencybox.Text = "";
+            bsubdistrictbox.Text = "";
+            blocationbox.Text = "";
         }
         // EMPLOYEES ================================================================================================================================================
 
@@ -65,6 +76,11 @@ namespace DatabaseFirst_WPF_Ekspedisi.Pages
             DG.ItemsSource = context.EMPLOYEES.OrderBy(p => p.ID).ToList();
         }
         // CREATE
+        private void addempbtn_Click_1(object sender, RoutedEventArgs e)
+        {
+            AddEmployees add = new AddEmployees();
+            add.Show();
+        }
         // SELECTION
         private void dataGrid_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
@@ -152,7 +168,12 @@ namespace DatabaseFirst_WPF_Ekspedisi.Pages
         }
 
         // BRANCHS ===================================================================================================================================================
-
+        // INSERT
+        private void addbrbtn_Click(object sender, RoutedEventArgs e)
+        {
+            AddBranch addbranch = new AddBranch();
+            addbranch.Show();
+        }
         private BRANCH SearchByIdBranch(int id)
         {
             var dataid = context.BRANCHS.Find(id);
@@ -182,11 +203,13 @@ namespace DatabaseFirst_WPF_Ekspedisi.Pages
                 string data3 = (databranch.SelectedCells[2].Column.GetCellContent(item) as TextBlock).Text;
                 aprovincebox.Text = data3;
                 string data4 = (databranch.SelectedCells[3].Column.GetCellContent(item) as TextBlock).Text;
-                asubdistrictbox.Text = data4;
+                aregencybox.Text = data4;
                 string data5 = (databranch.SelectedCells[4].Column.GetCellContent(item) as TextBlock).Text;
-                alocationbox.Text = data5;
+                asubdistrictbox.Text = data5;
                 string data6 = (databranch.SelectedCells[5].Column.GetCellContent(item) as TextBlock).Text;
-                awarehousebox.Text = data6;
+                alocationbox.Text = data6;
+                string data7 = (databranch.SelectedCells[6].Column.GetCellContent(item) as TextBlock).Text;
+                awarehousebox.Text = data7;
             }
             catch (Exception ex)
             {
@@ -212,13 +235,69 @@ namespace DatabaseFirst_WPF_Ekspedisi.Pages
 
             }
         }
+        // UPDATE
+        private void Aupdate_Click(object sender, RoutedEventArgs e)
+        {
+            object item = databranch.SelectedItem;
+            string temp_id = (databranch.SelectedCells[0].Column.GetCellContent(item) as TextBlock).Text;
+            
+            int id = Convert.ToInt32(temp_id);
 
+            BRANCH datax = SearchByIdBranch(id);
+            datax.NAME = anamebox.Text;
+            datax.PROVINCE = aprovincebox.Text;
+            datax.REGENCY = aregencybox.Text;
+            datax.SUB_DISTRICT = asubdistrictbox.Text;
+            datax.LOCATION = alocationbox.Text;
+            datax.WAREHOUSE_ID = Convert.ToInt32(awarehousebox.SelectedValue);
+
+            try
+            {
+                context.Entry(datax).State = System.Data.Entity.EntityState.Modified;
+                context.SaveChanges();
+                clearbranch();
+                this.ViewBranch(databranch);
+                MessageBox.Show("Update Success !", "Information", MessageBoxButton.OK, MessageBoxImage.Information);
+            }
+            catch (DbEntityValidationException ex)
+            {
+                foreach (var eve in ex.EntityValidationErrors)
+                {
+                    Console.WriteLine("Entity of type \"{0}\" in state \"{1}\" has the following validation errors:",
+                        eve.Entry.Entity.GetType().Name, eve.Entry.State);
+                    foreach (var ve in eve.ValidationErrors)
+                    {
+                        Console.WriteLine("- Property: \"{0}\", Error: \"{1}\"",
+                            ve.PropertyName, ve.ErrorMessage);
+                    }
+                }
+                throw;
+            }
+        }
 
         // WAREHOUSE ===================================================================================================================================================
         // VIEW
         private void ViewWarehouse(DataGrid DG)
         {
             DG.ItemsSource = context.WAREHOUSES.OrderBy(p => p.ID).ToList();
+        }
+
+        // INSERT
+        private void addwrbtn_Click(object sender, RoutedEventArgs e)
+        {
+            AddWarehouse aw = new AddWarehouse();
+            aw.Show();
+        }
+
+        private Warehouse SearchByIdWarehouse(int id)
+        {
+            var dataid = context.WAREHOUSES.Find(id);
+            if (dataid == null)
+            {
+                MessageBox.Show("ID " + id + " not found", "Information", MessageBoxButton.OK, MessageBoxImage.Information);
+            }
+
+            return dataid;
         }
         // SELECT
         private void datawarehouse_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -244,13 +323,88 @@ namespace DatabaseFirst_WPF_Ekspedisi.Pages
                 System.Console.Write(ex.InnerException);
             }
         }
+        // UPDATE
+        private void Bupdate_Click(object sender, RoutedEventArgs e)
+        {
+            object item = datawarehouse.SelectedItem;
+            string temp_id = (datawarehouse.SelectedCells[0].Column.GetCellContent(item) as TextBlock).Text;
 
+            int id = Convert.ToInt32(temp_id);
+
+            Warehouse datax = SearchByIdWarehouse(id);
+            datax.NAME = bnamebox.Text;
+            datax.PROVINCE = bprovincebox.Text;
+            datax.REGENCY = bregencybox.Text;
+            datax.SUB_DISTRICT = bsubdistrictbox.Text;
+            datax.LOCATION = blocationbox.Text;
+
+            try
+            {
+                context.Entry(datax).State = System.Data.Entity.EntityState.Modified;
+                context.SaveChanges();
+                clearbranch();
+                this.ViewWarehouse(datawarehouse);
+                MessageBox.Show("Update Success !", "Information", MessageBoxButton.OK, MessageBoxImage.Information);
+            }
+            catch (DbEntityValidationException ex)
+            {
+                foreach (var eve in ex.EntityValidationErrors)
+                {
+                    Console.WriteLine("Entity of type \"{0}\" in state \"{1}\" has the following validation errors:",
+                        eve.Entry.Entity.GetType().Name, eve.Entry.State);
+                    foreach (var ve in eve.ValidationErrors)
+                    {
+                        Console.WriteLine("- Property: \"{0}\", Error: \"{1}\"",
+                            ve.PropertyName, ve.ErrorMessage);
+                    }
+                }
+                throw;
+            }
+        }
+
+        // DELETE
+        private void Bdelete_Click(object sender, RoutedEventArgs e)
+        {
+            if (MessageBox.Show("Are You Sure ?", "Information", MessageBoxButton.YesNo, MessageBoxImage.Information) == MessageBoxResult.Yes)
+            {
+                object item = datawarehouse.SelectedItem;
+                string temp_id = (datawarehouse.SelectedCells[0].Column.GetCellContent(item) as TextBlock).Text;
+                int id = Convert.ToInt32(temp_id);
+                Warehouse datadel = SearchByIdWarehouse(id);
+                context.Entry(datadel).State = System.Data.Entity.EntityState.Deleted;
+                context.SaveChanges();
+                clearwarehouse();
+                this.ViewWarehouse(datawarehouse);
+            }
+            else
+            {
+
+            }
+
+        }
 
         // ASSURANCE ===================================================================================================================================================
         // VIEW
         private void ViewAssurances(DataGrid DG)
         {
-            DG.ItemsSource = context.ASSURANCES.OrderBy(p => p.ID).ToList();
+            var query = from x in context.ASSURANCES select x;
+            DG.ItemsSource = query.ToList();
+        }
+        private ASSURANCE SearchByIdAssurance(int id)
+        {
+            var dataid = context.ASSURANCES.Find(id);
+            if (dataid == null)
+            {
+                MessageBox.Show("ID " + id + " not found", "Information", MessageBoxButton.OK, MessageBoxImage.Information);
+            }
+
+            return dataid;
+        }
+        // INSERT
+        private void addassbtn_Click(object sender, RoutedEventArgs e)
+        {
+            AddAssurance add = new AddAssurance();
+            add.Show();
         }
         // SELECT
         private void dataassurance_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -273,12 +427,21 @@ namespace DatabaseFirst_WPF_Ekspedisi.Pages
             }
         }
 
+        // UPDATE
+
+        // DELETE
 
         // PACKAGES ===================================================================================================================================================
         // VIEW
         private void ViewPackages(DataGrid DG)
         {
             DG.ItemsSource = context.PACKAGES.OrderBy(p => p.ID).ToList();
+        }
+        // INSERT
+        private void addpackbtn_Click(object sender, RoutedEventArgs e)
+        {
+            AddPackage add = new AddPackage();
+            add.Show();
         }
         // SELECT
         private void datapackage_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -300,12 +463,22 @@ namespace DatabaseFirst_WPF_Ekspedisi.Pages
             }
         }
 
+        // UPDATE
+
+        // DELETE
+
 
         // CATEGORIES ===================================================================================================================================================
         // VIEW
         private void ViewCategories(DataGrid DG)
         {
             DG.ItemsSource = context.CATEGORIES.OrderBy(p => p.ID).ToList();
+        }
+        // INSERT
+        private void addcatbtn_Click(object sender, RoutedEventArgs e)
+        {
+            AddCategory add = new AddCategory();
+            add.Show();
         }
         // SELECT
         private void datacategory_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -326,12 +499,22 @@ namespace DatabaseFirst_WPF_Ekspedisi.Pages
             }
         }
 
+        // UPDATE
+
+        // DELETE
+
 
         // STATUS SHIPPING ===================================================================================================================================================
         // VIEW
         private void Viewstatshipping(DataGrid DG)
         {
             DG.ItemsSource = context.STATUS_SHIPPINGS.OrderBy(p => p.ID).ToList();
+        }
+        // INSERT
+        private void addstatbtn_Click(object sender, RoutedEventArgs e)
+        {
+            AddStatShipping add = new AddStatShipping();
+            add.Show();
         }
         // SELECT
         private void datastatshiping_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -351,6 +534,10 @@ namespace DatabaseFirst_WPF_Ekspedisi.Pages
             }
         }
 
+        // UPDATE
+
+        // DELETE
+
 
         // SHIPPING ===================================================================================================================================================
         private void ViewShippings(DataGrid DG)
@@ -364,16 +551,20 @@ namespace DatabaseFirst_WPF_Ekspedisi.Pages
             MainWindow main = new MainWindow();
             main.Show();
         }
-        
-        private void addempbtn_Click_1(object sender, RoutedEventArgs e)
-        {
-            AddEmployees add = new AddEmployees();
-            add.Show();
-        }
+
+        // UPDATE
+
+        // DELETE
+
+
+
+
+
+
         public void LoadGridCombo()
         {
             awarehousebox.DisplayMemberPath = "NAME";
-            awarehousebox.SelectedValuePath = "WAREHOUSE_ID";
+            awarehousebox.SelectedValuePath = "ID";
             awarehousebox.ItemsSource = context.WAREHOUSES.ToList();
             
             etypescombobox.DisplayMemberPath = "TYPES";
@@ -381,10 +572,65 @@ namespace DatabaseFirst_WPF_Ekspedisi.Pages
             etypescombobox.ItemsSource = context.ASSURANCES.ToList();
         }
 
-        private void addbrbtn_Click(object sender, RoutedEventArgs e)
+        private void Dupdate_Click(object sender, RoutedEventArgs e)
         {
-            AddBranch addbranch = new AddBranch();
-            addbranch.Show();
+            object item = datawarehouse.SelectedItem;
+            string temp_id = (datawarehouse.SelectedCells[0].Column.GetCellContent(item) as TextBlock).Text;
+
+            int id = Convert.ToInt32(temp_id);
+
+            Warehouse datax = SearchByIdWarehouse(id);
+            datax.NAME = bnamebox.Text;
+            datax.PROVINCE = bprovincebox.Text;
+            datax.REGENCY = bregencybox.Text;
+            datax.SUB_DISTRICT = bsubdistrictbox.Text;
+            datax.LOCATION = blocationbox.Text;
+
+            try
+            {
+                context.Entry(datax).State = System.Data.Entity.EntityState.Modified;
+                context.SaveChanges();
+                clearbranch();
+                this.ViewWarehouse(datawarehouse);
+                MessageBox.Show("Update Success !", "Information", MessageBoxButton.OK, MessageBoxImage.Information);
+            }
+            catch (DbEntityValidationException ex)
+            {
+                foreach (var eve in ex.EntityValidationErrors)
+                {
+                    Console.WriteLine("Entity of type \"{0}\" in state \"{1}\" has the following validation errors:",
+                        eve.Entry.Entity.GetType().Name, eve.Entry.State);
+                    foreach (var ve in eve.ValidationErrors)
+                    {
+                        Console.WriteLine("- Property: \"{0}\", Error: \"{1}\"",
+                            ve.PropertyName, ve.ErrorMessage);
+                    }
+                }
+                throw;
+            }
         }
+
+        private void Ddelete_Click(object sender, RoutedEventArgs e)
+        {
+            if (MessageBox.Show("Are You Sure ?", "Information", MessageBoxButton.YesNo, MessageBoxImage.Information) == MessageBoxResult.Yes)
+            {
+                object item = datawarehouse.SelectedItem;
+                string temp_id = (datawarehouse.SelectedCells[0].Column.GetCellContent(item) as TextBlock).Text;
+                int id = Convert.ToInt32(temp_id);
+                Warehouse datadel = SearchByIdWarehouse(id);
+                context.Entry(datadel).State = System.Data.Entity.EntityState.Deleted;
+                context.SaveChanges();
+                clearwarehouse();
+                this.ViewWarehouse(datawarehouse);
+            }
+            else
+            {
+
+            }
+        }
+
+        
+
+
     }
 }
