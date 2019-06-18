@@ -22,22 +22,23 @@
         <Rectangle Margin="0,102,-4,-4" Stroke="Black" Width="352" HorizontalAlignment="Center" Height="372" VerticalAlignment="Top">
             <Rectangle.Fill>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                    <GradientStop Color="Black" Offset="0"/>
-                    <GradientStop Color="#FF0056FF" Offset="1"/>
+                    <GradientStop Color="#FF47E715" Offset="0"/>
+                    <GradientStop Color="White" Offset="0.472"/>
+                    <GradientStop Color="#FF47E715" Offset="1"/>
                 </LinearGradientBrush>
             </Rectangle.Fill>
         </Rectangle>
         <Label x:Name="label" Content="E K S P E D I S I&#xA;    &quot; C E P A T &quot;" VerticalAlignment="Top" FontFamily="Stencil" BorderThickness="2" AllowDrop="True" FontSize="36" RenderTransformOrigin="0.351,0.026" Width="349" Height="95" HorizontalAlignment="Left" HorizontalContentAlignment="Center" Margin="0,0,-1,0">
             <Label.Foreground>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                    <GradientStop Color="#FF6BFF00" Offset="0.415"/>
-                    <GradientStop Color="White" Offset="0.736"/>
+                    <GradientStop Color="Black" Offset="0"/>
+                    <GradientStop Color="#FFFF4000" Offset="1"/>
                 </LinearGradientBrush>
             </Label.Foreground>
             <Label.Background>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                    <GradientStop Color="Black" Offset="0"/>
-                    <GradientStop Color="#FF0321F7" Offset="1"/>
+                    <GradientStop Color="#FF60E500" Offset="0"/>
+                    <GradientStop Color="White" Offset="1"/>
                 </LinearGradientBrush>
             </Label.Background>
             <Label.Effect>
@@ -53,33 +54,24 @@
                 </LinearGradientBrush>
             </Button.OpacityMask>
         </Button>
-        <Label x:Name="label1" Content="== LOGIN ==" HorizontalAlignment="Center" Margin="-3,107,-1,0" VerticalAlignment="Top" FontSize="30" Foreground="#FFF7F7F7" FontFamily="Rockwell" FontWeight="Bold" Height="45" Width="352" HorizontalContentAlignment="Center"/>
-        <TextBox x:Name="usernamebox" Height="49" Margin="75,197,69,0" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="29" HorizontalContentAlignment="Center" ToolTip="Username" TabIndex="2147483646" Tag="" Cursor="" IsReadOnlyCaretVisible="True"/>
-        <PasswordBox x:Name="passwordBox" HorizontalAlignment="Left" Margin="74,296,0,0" VerticalAlignment="Top" Width="206" Height="46" ToolTip="Password" FontSize="29" HorizontalContentAlignment="Center"/>
+        <Label x:Name="label1" Content="== LOGIN ==" HorizontalAlignment="Center" Margin="-3,107,-1,0" VerticalAlignment="Top" FontSize="30" Foreground="Black" FontFamily="Rockwell" FontWeight="Bold" Height="45" Width="352" HorizontalContentAlignment="Center"/>
+        <TextBox x:Name="usernamebox" Height="49" Margin="54,197,45,0" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="29" HorizontalContentAlignment="Center" ToolTip="Username" TabIndex="2147483646" Tag="" Cursor="" IsReadOnlyCaretVisible="True"/>
+        <PasswordBox x:Name="passwordBox" HorizontalAlignment="Left" Margin="54,296,0,0" VerticalAlignment="Top" Width="249" Height="46" ToolTip="Password" FontSize="29" HorizontalContentAlignment="Center"/>
         <Label x:Name="label2" Content="USERNAME" HorizontalAlignment="Left" Margin="70,152,0,0" VerticalAlignment="Top" FontFamily="Segoe UI Black" FontSize="26" Height="45" Width="210" HorizontalContentAlignment="Center">
             <Label.Foreground>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                    <GradientStop Color="#FFA3D908" Offset="0.405"/>
-                    <GradientStop Color="White" Offset="0.796"/>
+                    <GradientStop Color="Black" Offset="0"/>
+                    <GradientStop Color="#FFFF4000" Offset="1"/>
                 </LinearGradientBrush>
             </Label.Foreground>
         </Label>
         <Label x:Name="label2_Copy" Content="PASSWORD" HorizontalAlignment="Left" Margin="70,251,0,0" VerticalAlignment="Top" FontFamily="Segoe UI Black" FontSize="26" Height="45" Width="210" HorizontalContentAlignment="Center">
             <Label.Foreground>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                    <GradientStop Color="#FF7ED908" Offset="0.388"/>
-                    <GradientStop Color="White" Offset="0.796"/>
+                    <GradientStop Color="Black" Offset="0"/>
+                    <GradientStop Color="#FFFF4000" Offset="1"/>
                 </LinearGradientBrush>
             </Label.Foreground>
         </Label>
-        <Button x:Name="register" Content="Do'nt have an Account ? Register here" HorizontalAlignment="Left" Margin="0,412,-4,0" VerticalAlignment="Top" Width="352" Height="50" RenderTransformOrigin="0.435,3.508" FontSize="14" Click="register_Click" FontWeight="Bold" Background="{x:Null}" BorderThickness="0" BorderBrush="{x:Null}" TextOptions.TextHintingMode="Animated">
-            <Button.Foreground>
-                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                    <GradientStop Color="Black" Offset="0"/>
-                    <GradientStop Color="#FF0FFF00" Offset="1"/>
-                    <GradientStop Color="Black" Offset="0.993"/>
-                </LinearGradientBrush>
-            </Button.Foreground>
-        </Button>
     </Grid>
 </Window>

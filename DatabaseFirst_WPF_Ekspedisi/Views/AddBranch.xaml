@@ -13,21 +13,23 @@
                 <GradientStop Color="White" Offset="1"/>
             </LinearGradientBrush>
         </Grid.Background>
-        <TextBox x:Name="addnamebox" HorizontalAlignment="Left" Height="41" Margin="166,102,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="193"/>
-        <Label x:Name="label1_Copy11" Content="Name" HorizontalAlignment="Left" Margin="31,102,0,0" VerticalAlignment="Top" FontFamily="Segoe UI Black" FontSize="13" Width="127" Height="41" VerticalContentAlignment="Center"/>
-        <TextBox x:Name="addprovincebox" HorizontalAlignment="Left" Height="41" Margin="166,152,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="193"/>
-        <Label x:Name="label1_Copy12" Content="Province" HorizontalAlignment="Left" Margin="31,152,0,0" VerticalAlignment="Top" FontFamily="Segoe UI Black" FontSize="13" Width="127" Height="41" VerticalContentAlignment="Center"/>
-        <TextBox x:Name="addregencybox" HorizontalAlignment="Left" Height="41" Margin="166,202,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="193"/>
-        <Label x:Name="label1_Copy13" Content="Regency" HorizontalAlignment="Left" Margin="31,203,0,0" VerticalAlignment="Top" FontFamily="Segoe UI Black" FontSize="13" Width="127" Height="41" VerticalContentAlignment="Center"/>
-        <TextBox x:Name="addlocationbox" HorizontalAlignment="Left" Height="41" Margin="166,307,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="193"/>
-        <Label x:Name="label1_Copy14" Content="Location" HorizontalAlignment="Left" Margin="31,307,0,0" VerticalAlignment="Top" FontFamily="Segoe UI Black" FontSize="13" Width="127" Height="41" VerticalContentAlignment="Center"/>
-        <Label x:Name="label1_Copy15" Content="Warehouse Name" HorizontalAlignment="Left" Margin="31,358,0,0" VerticalAlignment="Top" FontFamily="Segoe UI Black" FontSize="13" Width="127" Height="41" VerticalContentAlignment="Center"/>
-        <ComboBox x:Name="addwarehousebox" HorizontalAlignment="Left" Margin="166,359,0,0" VerticalAlignment="Top" Width="193" Height="40"/>
-        <Label x:Name="label1_Copy" Content="ADD BRANCH" HorizontalAlignment="Left" Margin="23,29,0,0" VerticalAlignment="Top" FontFamily="Segoe UI Black" FontSize="26.667" Width="345" Height="49" Foreground="White" HorizontalContentAlignment="Center"/>
+        <TextBox x:Name="addnamebox" HorizontalAlignment="Left" Height="41" Margin="166,62,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="193" FontSize="22" VerticalContentAlignment="Center"/>
+        <Label x:Name="label1_Copy11" Content="Name" HorizontalAlignment="Left" Margin="31,62,0,0" VerticalAlignment="Top" FontFamily="Segoe UI Black" FontSize="13" Width="127" Height="41" VerticalContentAlignment="Center"/>
+        <TextBox x:Name="addprovincebox" HorizontalAlignment="Left" Height="41" Margin="166,112,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="193" FontSize="22" VerticalContentAlignment="Center"/>
+        <Label x:Name="label1_Copy12" Content="Province" HorizontalAlignment="Left" Margin="31,112,0,0" VerticalAlignment="Top" FontFamily="Segoe UI Black" FontSize="13" Width="127" Height="41" VerticalContentAlignment="Center"/>
+        <TextBox x:Name="addregencybox" HorizontalAlignment="Left" Height="41" Margin="166,162,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="193" FontSize="22" VerticalContentAlignment="Center"/>
+        <Label x:Name="label1_Copy13" Content="Regency" HorizontalAlignment="Left" Margin="31,163,0,0" VerticalAlignment="Top" FontFamily="Segoe UI Black" FontSize="13" Width="127" Height="41" VerticalContentAlignment="Center"/>
+        <TextBox x:Name="addlocationbox" HorizontalAlignment="Left" Height="41" Margin="166,267,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="193" FontSize="22" VerticalContentAlignment="Center"/>
+        <Label x:Name="label1_Copy14" Content="Location" HorizontalAlignment="Left" Margin="31,267,0,0" VerticalAlignment="Top" FontFamily="Segoe UI Black" FontSize="13" Width="127" Height="41" VerticalContentAlignment="Center"/>
+        <Label x:Name="label1_Copy15" Content="Warehouse Name" HorizontalAlignment="Left" Margin="31,318,0,0" VerticalAlignment="Top" FontFamily="Segoe UI Black" FontSize="13" Width="127" Height="41" VerticalContentAlignment="Center"/>
+        <ComboBox x:Name="addwarehousebox" HorizontalAlignment="Left" Margin="166,319,0,0" VerticalAlignment="Top" Width="193" Height="40" FontSize="22" VerticalContentAlignment="Center"/>
+        <Label x:Name="label1_Copy" Content="ADD BRANCH" HorizontalAlignment="Left" Margin="23,13,0,0" VerticalAlignment="Top" FontFamily="Segoe UI Black" FontSize="26.667" Width="345" Height="49" Foreground="White" HorizontalContentAlignment="Center"/>
         <Button x:Name="button" Content="Save" HorizontalAlignment="Left" Margin="31,425,0,0" VerticalAlignment="Top" Width="133" Height="58" Background="#FF59F930" FontSize="25" FontFamily="Segoe UI Black" Click="button_Click"/>
         <Button x:Name="button_Copy" Content="Cancel" HorizontalAlignment="Left" Margin="226,425,0,0" VerticalAlignment="Top" Width="133" Height="58" Background="#FFFA1616" FontSize="25" FontFamily="Segoe UI Black" Click="button_Copy_Click"/>
-        <TextBox x:Name="addsubdistrictbox" HorizontalAlignment="Left" Height="41" Margin="166,256,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="193"/>
-        <Label x:Name="label1_Copy1" Content="Sub District" HorizontalAlignment="Left" Margin="31,257,0,0" VerticalAlignment="Top" FontFamily="Segoe UI Black" FontSize="13" Width="127" Height="41" VerticalContentAlignment="Center"/>
+        <TextBox x:Name="addsubdistrictbox" HorizontalAlignment="Left" Height="41" Margin="166,216,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="193" FontSize="22" VerticalContentAlignment="Center"/>
+        <Label x:Name="label1_Copy1" Content="Sub District" HorizontalAlignment="Left" Margin="31,217,0,0" VerticalAlignment="Top" FontFamily="Segoe UI Black" FontSize="13" Width="127" Height="41" VerticalContentAlignment="Center"/>
+        <TextBox x:Name="addpricebox" HorizontalAlignment="Left" Height="41" Margin="166,366,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="193" FontSize="22" VerticalContentAlignment="Center"/>
+        <Label x:Name="label1_Copy2" Content="Price" HorizontalAlignment="Left" Margin="31,366,0,0" VerticalAlignment="Top" FontFamily="Segoe UI Black" FontSize="13" Width="127" Height="41" VerticalContentAlignment="Center"/>
 
     </Grid>
 </Window>

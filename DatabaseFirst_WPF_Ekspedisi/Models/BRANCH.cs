@@ -17,19 +17,22 @@ namespace DatabaseFirst_WPF_Ekspedisi.Models
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public BRANCH()
         {
-            this.SHIPPINGS = new HashSet<SHIPPING>();
+            this.EMPLOYEES = new HashSet<EMPLOYEE>();
         }
     
         public int ID { get; set; }
         public string NAME { get; set; }
-        public string PROVINCE { get; set; }
-        public string REGENCY { get; set; }
-        public string SUB_DISTRICT { get; set; }
-        public string LOCATION { get; set; }
+        public string PROVINCE_ID { get; set; }
+        public string REGENCY_ID { get; set; }
+        public string DISTRICT_ID { get; set; }
+        public string VILLAGE_ID { get; set; }
+        public string ADDRESS { get; set; }
         public int WAREHOUSE_ID { get; set; }
+        public Nullable<int> PRICE { get; set; }
     
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<SHIPPING> SHIPPINGS { get; set; }
+        public virtual VILLAGE VILLAGE { get; set; }
         public virtual Warehouse Warehouse { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<EMPLOYEE> EMPLOYEES { get; set; }
     }
 }

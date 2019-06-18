@@ -73,23 +73,26 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="Controllers\AssuranceController.cs" />
     <Compile Include="Controllers\BranchController.cs" />
     <Compile Include="Controllers\CategoryController.cs" />
     <Compile Include="Controllers\PackageController.cs" />
     <Compile Include="Controllers\ShippingController.cs" />
     <Compile Include="Controllers\StatusShippingsController.cs" />
     <Compile Include="Controllers\WarehouseController.cs" />
-    <Compile Include="Models\ASSURANCE.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
-    </Compile>
+    <Compile Include="Controllers\EmployeesController.cs" />
     <Compile Include="Models\BRANCH.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\CATEGORy.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\DISTRICT.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\EMPLOYEE.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\HISTORY_SHIPPING.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Model1.Context.cs">
@@ -110,15 +113,35 @@
     <Compile Include="Models\PACKAGE.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
-    <Compile Include="Controllers\EmployeesController.cs" />
+    <Compile Include="Models\PROVINCE.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\REGENCy.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\SHIPPING.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\STATUS_SHIPPINGS.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\sysdiagram.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\VILLAGE.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\Warehouse.cs">
       <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Views\DassboardAdmin.xaml.cs">
+      <DependentUpon>DassboardAdmin.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Shipping_DetailShipping.xaml.cs">
+      <DependentUpon>Shipping_DetailShipping.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\TrackingItems.xaml.cs">
+      <DependentUpon>TrackingItems.xaml</DependentUpon>
     </Compile>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
@@ -132,23 +155,7 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Page Include="Views\AddAssurance.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
     <Page Include="Views\AddBranch.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Views\AddCategory.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Views\AddEmployees.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Views\AddPackage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -161,37 +168,25 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\DassboardAdmin.xaml">
-      <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Views\example.xaml">
       <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\ManageApps.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\Shipping.xaml">
+    <Page Include="Views\Shipping_DetailShipping.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\TrackingItems.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Views\AddAssurance.xaml.cs">
-      <DependentUpon>AddAssurance.xaml</DependentUpon>
-    </Compile>
     <Compile Include="Views\AddBranch.xaml.cs">
       <DependentUpon>AddBranch.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Views\AddCategory.xaml.cs">
-      <DependentUpon>AddCategory.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Views\AddEmployees.xaml.cs">
-      <DependentUpon>AddEmployees.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Views\AddPackage.xaml.cs">
-      <DependentUpon>AddPackage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\AddStatShipping.xaml.cs">
       <DependentUpon>AddStatShipping.xaml</DependentUpon>
@@ -199,17 +194,8 @@
     <Compile Include="Views\AddWarehouse.xaml.cs">
       <DependentUpon>AddWarehouse.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\DassboardAdmin.xaml.cs">
-      <DependentUpon>DassboardAdmin.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Views\example.xaml.cs">
-      <DependentUpon>example.xaml</DependentUpon>
-    </Compile>
     <Compile Include="Views\ManageApps.xaml.cs">
       <DependentUpon>ManageApps.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Views\Shipping.xaml.cs">
-      <DependentUpon>Shipping.xaml</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
@@ -249,6 +235,23 @@
     <Resource Include="Images\ekspedisi.jpg" />
   </ItemGroup>
   <ItemGroup>
+    <Resource Include="Images\delete.png" />
+    <Resource Include="Images\delivpoint.png" />
+    <Resource Include="Images\home-button-icon-png-23.png" />
+    <Resource Include="Images\logout.png" />
+    <Resource Include="Images\social_network-512.png" />
+    <Resource Include="Images\truck.png" />
+    <Resource Include="Images\update.png" />
+    <Content Include="Models\Model1.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Model1.edmx</DependentUpon>
+      <LastGenOutput>Model1.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\Model1.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Model1.edmx</DependentUpon>
+      <LastGenOutput>Model1.cs</LastGenOutput>
+    </Content>
     <Resource Include="nolkm.jpg" />
     <Resource Include="Images\employee.jpg" />
     <Resource Include="Images\user.png" />
@@ -261,16 +264,7 @@
     <Resource Include="Images\admin2.jpg" />
     <Resource Include="Images\Automation-icon.png" />
     <Resource Include="Images\LogoutIcon.jpg" />
-    <Content Include="Models\Model1.Context.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>Model1.edmx</DependentUpon>
-      <LastGenOutput>Model1.Context.cs</LastGenOutput>
-    </Content>
-    <Content Include="Models\Model1.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>Model1.edmx</DependentUpon>
-      <LastGenOutput>Model1.cs</LastGenOutput>
-    </Content>
+    <Resource Include="Images\home.jpg" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />

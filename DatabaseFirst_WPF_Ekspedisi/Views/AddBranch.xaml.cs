@@ -23,7 +23,7 @@ namespace DatabaseFirst_WPF_Ekspedisi.Views
     public partial class AddBranch : Window
     {
 
-        ExpeditionEntities context = new ExpeditionEntities();
+        ExpeditionEntities2 context = new ExpeditionEntities2();
         public AddBranch()
         {
             InitializeComponent();
@@ -31,23 +31,34 @@ namespace DatabaseFirst_WPF_Ekspedisi.Views
 
         private void button_Click(object sender, RoutedEventArgs e)
         {
-            BranchController controller = new BranchController();
-            string data1 = addnamebox.Text;
-            string data2 = addprovincebox.Text;
-            string data3 = addregencybox.Text;
-            string data4 = addsubdistrictbox.Text;
-            string data5 = addlocationbox.Text;
-            int data6 = Convert.ToInt16(addwarehousebox.SelectedValue);
-            controller.Insert(data1, data2, data3, data4, data5, data6);
-            MessageBox.Show("Insert data Success", "Message", MessageBoxButton.OK, MessageBoxImage.Information);
-            this.Hide();
+            //try
+            //{
+            //BranchController controller = new BranchController();
+            //string data1 = addnamebox.Text;
+            //string data2 = addprovincebox.Text;
+            //string data3 = addregencybox.Text;
+            //string data4 = addsubdistrictbox.Text;
+            //string data5 = addlocationbox.Text;
+            //int data6 = Convert.ToInt16(addwarehousebox.SelectedValue);
+            //int data7 = Convert.ToInt32(addpricebox.Text);
+            //    controller.Insert(data1, data2, data3, data4, data5, data6, data7, data8, data9);
+            //MessageBox.Show("Insert data Success", "Message", MessageBoxButton.OK, MessageBoxImage.Information);
+            //this.Hide();
+            //}
+
+            //catch (Exception ex)
+            //{
+            //    MessageBox.Show(ex.Message);
+            //    MessageBox.Show(ex.StackTrace);
+            //    System.Console.Write(ex.InnerException);
+            //}
         }
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
-            addwarehousebox.DisplayMemberPath = "TYPES";
-            addwarehousebox.SelectedValuePath = "ID";
-            addwarehousebox.ItemsSource = context.ASSURANCES.ToList();
+            //addwarehousebox.DisplayMemberPath = "TYPES";
+            //addwarehousebox.SelectedValuePath = "ID";
+            //addwarehousebox.ItemsSource = context.ASSURANCES.ToList();
         }
 
         private void button_Copy_Click(object sender, RoutedEventArgs e)

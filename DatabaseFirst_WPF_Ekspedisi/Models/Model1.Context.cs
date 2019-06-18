@@ -13,10 +13,10 @@ namespace DatabaseFirst_WPF_Ekspedisi.Models
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class ExpeditionEntities : DbContext
+    public partial class ExpeditionEntities2 : DbContext
     {
-        public ExpeditionEntities()
-            : base("name=ExpeditionEntities")
+        public ExpeditionEntities2()
+            : base("name=ExpeditionEntities2")
         {
         }
     
@@ -25,13 +25,18 @@ namespace DatabaseFirst_WPF_Ekspedisi.Models
             throw new UnintentionalCodeFirstException();
         }
     
-        public virtual DbSet<ASSURANCE> ASSURANCES { get; set; }
         public virtual DbSet<BRANCH> BRANCHS { get; set; }
         public virtual DbSet<CATEGORy> CATEGORIES { get; set; }
+        public virtual DbSet<DISTRICT> DISTRICTS { get; set; }
         public virtual DbSet<EMPLOYEE> EMPLOYEES { get; set; }
+        public virtual DbSet<HISTORY_SHIPPING> HISTORY_SHIPPING { get; set; }
         public virtual DbSet<PACKAGE> PACKAGES { get; set; }
+        public virtual DbSet<PROVINCE> PROVINCES { get; set; }
+        public virtual DbSet<REGENCy> REGENCIES { get; set; }
         public virtual DbSet<SHIPPING> SHIPPINGS { get; set; }
         public virtual DbSet<STATUS_SHIPPINGS> STATUS_SHIPPINGS { get; set; }
+        public virtual DbSet<sysdiagram> sysdiagrams { get; set; }
+        public virtual DbSet<VILLAGE> VILLAGES { get; set; }
         public virtual DbSet<Warehouse> WAREHOUSES { get; set; }
     }
 }

@@ -14,36 +14,46 @@ namespace DatabaseFirst_WPF_Ekspedisi.Models
     
     public partial class SHIPPING
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public SHIPPING()
+        {
+            this.HISTORY_SHIPPING = new HashSet<HISTORY_SHIPPING>();
+        }
+    
         public int ID { get; set; }
-        public Nullable<System.DateTime> DATE_SHIPPING { get; set; }
-        public int WEIGHTS { get; set; }
-        public int VOLUME { get; set; }
+        public Nullable<System.DateTime> DATE { get; set; }
         public int QUANTITY { get; set; }
-        public int ASSURANCES_ID { get; set; }
-        public string RECEIVER_NAME { get; set; }
-        public string DESTINATION_ADDRESS { get; set; }
-        public string DESTINATION_SUB_DISTRICT { get; set; }
-        public string DESTINATION_REGENCY { get; set; }
-        public string DESTINATION_PROVINCE { get; set; }
-        public string RECEIVER_PHONE { get; set; }
+        public Nullable<int> ASSURANCES { get; set; }
+        public int WEIGHTS { get; set; }
+        public int CATEGORY_ID { get; set; }
         public string SENDER_NAME { get; set; }
-        public string SENDER_ADDRESS { get; set; }
-        public string SENDER_SUB_DISTRICT { get; set; }
-        public string SENDER_REGENCY { get; set; }
-        public string SENDER_PROVINCE { get; set; }
         public string SENDER_PHONE { get; set; }
+        public string SENDER_PROVINCE_ID { get; set; }
+        public string SENDER_REGENCY_ID { get; set; }
+        public string SENDER_DISTRICT_ID { get; set; }
+        public string SENDER_VILLAGE_ID { get; set; }
+        public string SENDER_ADDRESS { get; set; }
+        public string RECEIVER_NAME { get; set; }
+        public string RECEIVER_PHONE { get; set; }
+        public string RECEIVER_PROVINCE_ID { get; set; }
+        public string RECEIVER_REGENCY_ID { get; set; }
+        public string RECEIVER_DISTRICT_ID { get; set; }
+        public string RECEIVER_VILLAGE_ID { get; set; }
+        public string RECEIVER_ADDRESS { get; set; }
         public int PRICE { get; set; }
         public Nullable<int> TOTAL_PRICE { get; set; }
         public int STATUS_SHIPPING_ID { get; set; }
         public int EMPLOYEE_ID { get; set; }
-        public int BRANCH_ID { get; set; }
         public int PACKAGE_ID { get; set; }
-        public int CATEGORY_ID { get; set; }
+        public int DESTINATION_BRACH_ID { get; set; }
     
-        public virtual BRANCH BRANCH { get; set; }
         public virtual CATEGORy CATEGORy { get; set; }
         public virtual EMPLOYEE EMPLOYEE { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<HISTORY_SHIPPING> HISTORY_SHIPPING { get; set; }
         public virtual PACKAGE PACKAGE { get; set; }
         public virtual STATUS_SHIPPINGS STATUS_SHIPPINGS { get; set; }
+        public virtual VILLAGE VILLAGE { get; set; }
+        public virtual VILLAGE VILLAGE1 { get; set; }
     }
 }

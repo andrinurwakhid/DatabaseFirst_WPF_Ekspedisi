@@ -4,21 +4,34 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="82f1bb7f0838406c8122f2be0b499006" Name="Diagram1">
-        <EntityTypeShape EntityType="ExpeditionModel.ASSURANCE" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="ExpeditionModel.BRANCH" Width="1.5" PointX="3" PointY="3.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="ExpeditionModel.CATEGORy" Width="1.5" PointX="3" PointY="6.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="ExpeditionModel.EMPLOYEE" Width="1.5" PointX="3" PointY="9.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="ExpeditionModel.PACKAGE" Width="1.5" PointX="3" PointY="11.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="ExpeditionModel.SHIPPING" Width="1.5" PointX="5.25" PointY="1.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="ExpeditionModel.STATUS_SHIPPINGS" Width="1.5" PointX="3" PointY="14.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="ExpeditionModel.Warehouse" Width="1.5" PointX="0.75" PointY="3.375" IsExpanded="true" />
-        <AssociationConnector Association="ExpeditionModel.FK_BRANCH" ManuallyRouted="false" />
-        <AssociationConnector Association="ExpeditionModel.FK_WAREHOUSE" ManuallyRouted="false" />
-        <AssociationConnector Association="ExpeditionModel.FK_CATEGORI" ManuallyRouted="false" />
-        <AssociationConnector Association="ExpeditionModel.FK_EMPLOYEE" ManuallyRouted="false" />
-        <AssociationConnector Association="ExpeditionModel.FK_PACKAGE" ManuallyRouted="false" />
-        <AssociationConnector Association="ExpeditionModel.FK_STATUS_SHIPPING" ManuallyRouted="false" />
+      <Diagram DiagramId="4fc8638e2e4041388aed872d4bf0c0e8" Name="Diagram1">
+        <EntityTypeShape EntityType="ExpeditionModel.BRANCH" Width="1.5" PointX="12" PointY="7.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="ExpeditionModel.CATEGORy" Width="1.5" PointX="14.25" PointY="4.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="ExpeditionModel.DISTRICT" Width="1.5" PointX="5.25" PointY="5.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ExpeditionModel.EMPLOYEE" Width="1.5" PointX="14.25" PointY="7.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="ExpeditionModel.HISTORY_SHIPPING" Width="1.5" PointX="18.75" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ExpeditionModel.PACKAGE" Width="1.5" PointX="14.25" PointY="11" IsExpanded="true" />
+        <EntityTypeShape EntityType="ExpeditionModel.PROVINCE" Width="1.5" PointX="0.75" PointY="6" IsExpanded="true" />
+        <EntityTypeShape EntityType="ExpeditionModel.REGENCy" Width="1.5" PointX="3" PointY="5.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ExpeditionModel.SHIPPING" Width="1.5" PointX="16.5" PointY="4.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="ExpeditionModel.STATUS_SHIPPINGS" Width="1.5" PointX="14.25" PointY="13.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="ExpeditionModel.sysdiagram" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ExpeditionModel.VILLAGE" Width="1.5" PointX="7.5" PointY="5.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="ExpeditionModel.Warehouse" Width="1.5" PointX="9.75" PointY="9.5" IsExpanded="true" />
+        <AssociationConnector Association="ExpeditionModel.FK_BRANCHS_VILLAGES" ManuallyRouted="false" />
+        <AssociationConnector Association="ExpeditionModel.FK_BRANCHS_WAREHOUSES" ManuallyRouted="false" />
+        <AssociationConnector Association="ExpeditionModel.FK_EMPLOYEES_BRANCHS" ManuallyRouted="false" />
+        <AssociationConnector Association="ExpeditionModel.FK_SHIPPINGS_CATEGORIES" ManuallyRouted="false" />
+        <AssociationConnector Association="ExpeditionModel.FK_DISTRICTS_REGENCIES" ManuallyRouted="false" />
+        <AssociationConnector Association="ExpeditionModel.FK_VILLAGES_VILLAGES" ManuallyRouted="false" />
+        <AssociationConnector Association="ExpeditionModel.FK_SHIPPINGS_EMPLOYEES" ManuallyRouted="false" />
+        <AssociationConnector Association="ExpeditionModel.FK_HISTORY_SHIPPING_SHIPPINGS" ManuallyRouted="false" />
+        <AssociationConnector Association="ExpeditionModel.FK_SHIPPINGS_PACKAGES" ManuallyRouted="false" />
+        <AssociationConnector Association="ExpeditionModel.FK_REGENCIES_PROVINCES" ManuallyRouted="false" />
+        <AssociationConnector Association="ExpeditionModel.FK_SHIPPINGS_STATUS_SHIPPING" ManuallyRouted="false" />
+        <AssociationConnector Association="ExpeditionModel.FK_SHIPPINGS_VILLAGES" ManuallyRouted="false" />
+        <AssociationConnector Association="ExpeditionModel.FK_SHIPPINGS_VILLAGES1" ManuallyRouted="false" />
+        <AssociationConnector Association="ExpeditionModel.FK_WAREHOUSES_VILLAGES" ManuallyRouted="false" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

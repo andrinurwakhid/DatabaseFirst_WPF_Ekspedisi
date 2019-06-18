@@ -12,6 +12,9 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using DatabaseFirst_WPF_Ekspedisi.Models;
+using System.Data.Entity.Validation;
+using DatabaseFirst_WPF_Ekspedisi.Controllers;
+using DatabaseFirst_WPF_Ekspedisi.Views;
 
 namespace DatabaseFirst_WPF_Ekspedisi.Pages
 {
@@ -37,6 +40,20 @@ namespace DatabaseFirst_WPF_Ekspedisi.Pages
             this.Hide();
             ManageApps ma = new ManageApps();
             ma.Show();
+        }
+
+        private void shipping_Click(object sender, RoutedEventArgs e)
+        {
+            this.Hide();
+            Shipping_DetailShipping shi = new Shipping_DetailShipping();
+            shi.Show();
+        }
+
+        private void tracking_Click(object sender, RoutedEventArgs e)
+        {
+            this.Hide();
+            TrackingItems shi = new TrackingItems();
+            shi.Show();
         }
     }
 }

@@ -22,7 +22,7 @@ namespace DatabaseFirst_WPF_Ekspedisi.Views
     /// </summary>
     public partial class AddStatShipping : Window
     {
-        ExpeditionEntities context = new ExpeditionEntities();
+        ExpeditionEntities2 context = new ExpeditionEntities2();
         public AddStatShipping()
         {
             InitializeComponent();
@@ -30,11 +30,21 @@ namespace DatabaseFirst_WPF_Ekspedisi.Views
 
         private void saveSS_Click(object sender, RoutedEventArgs e)
         {
+            try
+            {
             StatusShippingsController controller = new StatusShippingsController();
             string data1 = addnameboxSS.Text;
             controller.Insert(data1);
             MessageBox.Show("Insert data Success", "Message", MessageBoxButton.OK, MessageBoxImage.Information);
             this.Hide();
+            }
+
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                MessageBox.Show(ex.StackTrace);
+                System.Console.Write(ex.InnerException);
+            }
         }
 
         private void cancelSS_Click(object sender, RoutedEventArgs e)

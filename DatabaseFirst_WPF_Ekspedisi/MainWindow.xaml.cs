@@ -13,15 +13,17 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using DatabaseFirst_WPF_Ekspedisi.Pages;
+using DatabaseFirst_WPF_Ekspedisi.Models;
 
 namespace DatabaseFirst_WPF_Ekspedisi
 {
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
-    
+
     public partial class MainWindow : Window
     {
+        ExpeditionEntities2 context = new ExpeditionEntities2();
         public MainWindow()
         {
             InitializeComponent();
@@ -32,12 +34,17 @@ namespace DatabaseFirst_WPF_Ekspedisi
             Close();
         }
 
+        public static string tmpUsername, tmppassword;
+        public static int tmpidadmin;
         EmployeesController employeeC = new EmployeesController();
         private void login_Click(object sender, RoutedEventArgs e)
         {
-            
+
             if (employeeC.login(usernamebox.Text, passwordBox.Password) == true)
             {
+                tmpUsername = Convert.ToString(usernamebox.Text);
+                tmppassword = passwordBox.Password;
+                tmpidadmin = Convert.ToInt32(context.EMPLOYEES.Where(p => p.USERNAME == tmpUsername && p.PASSWORD == tmppassword).FirstOrDefault().ID);
                 MessageBox.Show("Login Success", "Warning", MessageBoxButton.OK, MessageBoxImage.Information);
                 this.Hide();
                 DassboardAdmin admin = new DassboardAdmin();
@@ -50,12 +57,6 @@ namespace DatabaseFirst_WPF_Ekspedisi
                 usernamebox.Clear();
                 usernamebox.Focus();
             }
-        }
-
-        private void register_Click(object sender, RoutedEventArgs e)
-        {
-            AddEmployees addemployee = new AddEmployees();
-            addemployee.ShowDialog();
         }
     }
 }

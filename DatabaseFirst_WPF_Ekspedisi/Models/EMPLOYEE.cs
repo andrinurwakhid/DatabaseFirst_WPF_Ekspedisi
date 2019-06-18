@@ -25,7 +25,9 @@ namespace DatabaseFirst_WPF_Ekspedisi.Models
         public string POSITION { get; set; }
         public string USERNAME { get; set; }
         public string PASSWORD { get; set; }
+        public Nullable<int> BRANCH_ID { get; set; }
     
+        public virtual BRANCH BRANCH { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<SHIPPING> SHIPPINGS { get; set; }
     }

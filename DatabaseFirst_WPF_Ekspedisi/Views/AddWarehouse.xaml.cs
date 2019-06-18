@@ -22,7 +22,7 @@ namespace DatabaseFirst_WPF_Ekspedisi.Views
     /// </summary>
     public partial class AddWarehouse : Window
     {
-        ExpeditionEntities context = new ExpeditionEntities();
+        ExpeditionEntities2 context = new ExpeditionEntities2();
         public AddWarehouse()
         {
             InitializeComponent();
@@ -30,6 +30,8 @@ namespace DatabaseFirst_WPF_Ekspedisi.Views
 
         private void saveW_Click(object sender, RoutedEventArgs e)
         {
+            try
+            {
             WarehouseController controller = new WarehouseController();
             string data1 = addnameboxW.Text;
             string data2 = addprovinceboxW.Text;
@@ -39,6 +41,14 @@ namespace DatabaseFirst_WPF_Ekspedisi.Views
             controller.Insert(data1, data2, data3, data4, data5);
             MessageBox.Show("Insert data Success", "Message", MessageBoxButton.OK, MessageBoxImage.Information);
             this.Hide();
+            }
+
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                MessageBox.Show(ex.StackTrace);
+                System.Console.Write(ex.InnerException);
+            }
         }
 
         private void cancelW_Click(object sender, RoutedEventArgs e)

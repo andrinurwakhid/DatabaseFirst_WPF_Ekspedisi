@@ -5,15 +5,10 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:DatabaseFirst_WPF_Ekspedisi.Pages"
         mc:Ignorable="d"
-        WindowState = "Maximized" WindowStyle="None"
-        Title="ManageApps" Height="600" Width="800" Loaded="Window_Loaded_1">
-    <Grid>
-        <Grid.Background>
-            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                <GradientStop Color="#FF0700FF"/>
-                <GradientStop Color="#FFFF8900" Offset="1"/>
-            </LinearGradientBrush>
-        </Grid.Background>
+        WindowState="Maximized" WindowStyle="None"
+        Title="ManageApps" Height="611.5" Width="1360.643" Loaded="Window_Loaded">
+    <!--WindowState = "Maximized" WindowStyle="None"-->
+    <Grid Background="#FF6FC9C1" Margin="0,0,0,-20">
         <Rectangle HorizontalAlignment="Left" Height="433" Margin="394,113,0,0" Stroke="Black" VerticalAlignment="Top" Width="377">
             <Rectangle.Fill>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
@@ -22,250 +17,200 @@
                 </LinearGradientBrush>
             </Rectangle.Fill>
         </Rectangle>
-        <TabControl x:Name="tabControl" HorizontalAlignment="Left" Height="484" Margin="10,76,0,0" VerticalAlignment="Top" Width="774">
+        <TabControl x:Name="tabControl" Margin="10,76,8,10">
             <TabItem x:Name="tbranch" Header="Branch" Margin="-2,-2,-2,0" Height="22">
                 <Grid Background="#FFE5E5E5">
-                    <DataGrid x:Name="databranch" Margin="10,10,391.8,0" VerticalAlignment="Top" Height="434" SelectionChanged="databranch_SelectionChanged" CanUserReorderColumns="False" AutoGenerateColumns="False" Width="367" IsReadOnly="True">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="223*"/>
+                        <ColumnDefinition Width="42*"/>
+                    </Grid.ColumnDefinitions>
+                    <DataGrid x:Name="databranch" Margin="10,39,178.2,0" SelectionChanged="databranch_SelectionChanged" CanUserReorderColumns="False" AutoGenerateColumns="False" IsReadOnly="True" Height="461" VerticalAlignment="Top">
                         <DataGrid.Columns>
                             <DataGridTextColumn Binding="{Binding ID}" Header="ID" CanUserResize="False" MaxWidth="50"/>
-                            <DataGridTextColumn Binding="{Binding NAME}" Header="Name"/>
-                            <DataGridTextColumn Binding="{Binding PROVINCE}" Header="Province"/>
-                            <DataGridTextColumn Binding="{Binding REGENCY}" Header="Regency"/>
-                            <DataGridTextColumn Binding="{Binding SUB_DISTRICT}" Header="Sub District"/>
-                            <DataGridTextColumn Binding="{Binding LOCATION}" Header="Location"/>
-                            <DataGridTextColumn Binding="{Binding Warehouse.NAME}" Header="Warehouse Name"/>
+                            <DataGridTextColumn Binding="{Binding NAME}" Header="NAME" Width="140"/>
+                            <DataGridTextColumn Binding="{Binding ADDRESS}" Header="ADDRESS" Width="200"/>
+                            <DataGridTextColumn Binding="{Binding VILLAGE.NAME}" Header="VILLAGE" Width="150"/>
+                            <DataGridTextColumn Binding="{Binding VILLAGE.DISTRICT.NAME}" Header="DISTRICT"/>
+                            <DataGridTextColumn Binding="{Binding VILLAGE.DISTRICT.REGENCy.NAME}" Header="REGENCY" Width="150"/>
+                            <DataGridTextColumn Binding="{Binding VILLAGE.DISTRICT.REGENCy.PROVINCE.NAME}" Header="PROVINCE"/>
+                            <DataGridTextColumn Binding="{Binding Warehouse.NAME}" Header="WAREHOUSE"/>
+                            <DataGridTextColumn Binding="{Binding PRICE}" Header="PRICE"/>
                         </DataGrid.Columns>
                     </DataGrid>
-                    <Rectangle HorizontalAlignment="Left" Height="434" Margin="382,13,0,0" Stroke="Black" VerticalAlignment="Top" Width="377">
-                        <Rectangle.Fill>
-                            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                                <GradientStop Color="#FF5CC3C5" Offset="0"/>
-                                <GradientStop Color="White" Offset="1"/>
-                            </LinearGradientBrush>
-                        </Rectangle.Fill>
-                    </Rectangle>
-                    <Label x:Name="label1_Copy3" Content="Manage Branch" HorizontalAlignment="Left" Margin="408,22,0,0" VerticalAlignment="Top" FontFamily="Segoe UI Black" FontSize="21" Width="328" HorizontalContentAlignment="Center"/>
-                    <Button x:Name="addbrbtn" Content="" HorizontalAlignment="Left" Margin="716,10,0,0" VerticalAlignment="Top" Width="43" Height="34" Click="addbrbtn_Click">
+                    <Rectangle Margin="953,10,2,10" Fill="#FF6FC9C1" Grid.ColumnSpan="2"/>
+                    <TextBox x:Name="txtIdBranch" HorizontalAlignment="Left" Height="23" Margin="9,77,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="146" IsReadOnly="True" Text="---[ ID ]---" Grid.Column="1"/>
+                    <TextBox x:Name="txtNameBranch" HorizontalAlignment="Left" Height="23" Margin="9,108,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="146" Grid.Column="1"/>
+                    <TextBox x:Name="txtAddressBranch" HorizontalAlignment="Left" Height="45" Margin="9,259,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="146" Grid.Column="1"/>
+                    <ComboBox x:Name="cmbWarehouseBranch" HorizontalAlignment="Left" Margin="9,312,0,0" VerticalAlignment="Top" Width="146" Grid.Column="1" Height="22"/>
+                    <Label x:Name="label2" Content="Search :" HorizontalAlignment="Left" Margin="13,8,0,0" VerticalAlignment="Top" Height="26" Width="51"/>
+                    <TextBox x:Name="txtSearchBranch" HorizontalAlignment="Left" Height="23" Margin="69,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="243"/>
+                    <Button x:Name="btnSearchBranch" Content="SEARCH" HorizontalAlignment="Left" Margin="317,10,0,0" VerticalAlignment="Top" Width="70" Click="btnSearchBranch_Click" Height="22"/>
+                    <ComboBox x:Name="cmbProvinceBranch" HorizontalAlignment="Left" Margin="9,139,0,0" VerticalAlignment="Top" Width="146" Grid.Column="1" Height="22" SelectionChanged="cmbProvinceBranch_SelectionChanged"/>
+                    <ComboBox x:Name="cmbRegencyBranch" HorizontalAlignment="Left" Margin="9,169,0,0" VerticalAlignment="Top" Width="146" Grid.Column="1" Height="22" SelectionChanged="cmbRegencyBranch_SelectionChanged"/>
+                    <ComboBox x:Name="cmbDistrictBranch" Margin="9,199,0,0" VerticalAlignment="Top" Grid.Column="1" Height="22" HorizontalAlignment="Left" Width="146" SelectionChanged="cmbDistrictBranch_SelectionChanged"/>
+                    <ComboBox x:Name="cmbVillageBranch" HorizontalAlignment="Left" Margin="9,229,0,0" VerticalAlignment="Top" Width="146" Grid.Column="1" Height="22"/>
+                    <Label x:Name="label3" Content="ID" Margin="985,75,11,0" VerticalAlignment="Top" HorizontalContentAlignment="Right" FontSize="14" Height="29"/>
+                    <Label x:Name="label4" Content="Name" Margin="985,106,11,0" VerticalAlignment="Top" HorizontalContentAlignment="Right" FontSize="14" Height="29"/>
+                    <Label x:Name="label5" Content="Province" Margin="985,137,11,0" VerticalAlignment="Top" HorizontalContentAlignment="Right" FontSize="14" Height="29"/>
+                    <Label x:Name="label6" Content="Regency" Margin="985,168,11,0" VerticalAlignment="Top" HorizontalContentAlignment="Right" RenderTransformOrigin="0.291,0.5" FontSize="14" Height="29"/>
+                    <Label x:Name="label7" Content="District" Margin="985,199,11,0" VerticalAlignment="Top" HorizontalContentAlignment="Right" FontSize="14" Height="29"/>
+                    <Label x:Name="label8" Content="Village" Margin="985,230,11,0" VerticalAlignment="Top" HorizontalContentAlignment="Right" FontSize="14" Height="29"/>
+                    <Label x:Name="label9" Content="Addres" Margin="985,261,11,0" VerticalAlignment="Top" HorizontalContentAlignment="Right" FontSize="14" Height="29"/>
+                    <Label x:Name="label10" Content="Warehouse" Margin="985,309,11,0" VerticalAlignment="Top" HorizontalContentAlignment="Right" FontSize="14" Height="29"/>
+                    <Label x:Name="label11" Content="Price" Margin="985,340,12,0" VerticalAlignment="Top" HorizontalContentAlignment="Right" Height="26"/>
+                    <TextBox x:Name="txtPriceBranch" HorizontalAlignment="Left" Height="23" Margin="9,342,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="146" Grid.Column="1"/>
+                    <Button x:Name="btnSaveBranch" Content="Save" HorizontalAlignment="Left" Margin="1007,393,0,0" VerticalAlignment="Top" Width="42" Click="btnSaveBranch_Click" Height="22"/>
+                    <Button x:Name="btnEditBrach" Content="Edit" HorizontalAlignment="Left" Margin="1091,393,0,0" VerticalAlignment="Top" Width="46" Height="22" Click="btnEditBrach_Click" Grid.ColumnSpan="2"/>
+                    <Button x:Name="btnDeleteBranch" Content="Delete" HorizontalAlignment="Left" Margin="26,393,0,0" VerticalAlignment="Top" Width="56" Height="22" Grid.Column="1" Click="btnDeleteBranch_Click"/>
+                </Grid>
+            </TabItem>
+            <TabItem x:Name="twarehouse" Header="Warehouse" Margin="-2,-1,-1.8,0" Height="22" VerticalAlignment="Top" HorizontalAlignment="Right" Width="75">
+                <Grid Background="#FFE5E5E5">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    <DataGrid x:Name="datawarehouse" Margin="10,38,383.4,0" VerticalAlignment="Top" Height="462" SelectionChanged="datawarehouse_SelectionChanged" CanUserReorderColumns="False" AutoGenerateColumns="False" IsReadOnly="True" BorderBrush="{x:Null}">
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Binding="{Binding ID}" Header="ID" CanUserResize="False" MaxWidth="50"/>
+                            <DataGridTextColumn Binding="{Binding NAME}" Header="NAME" Width="140"/>
+                            <DataGridTextColumn Binding="{Binding ADDRESS}" Header="ADDRESS" MinWidth="250" MaxWidth="300"/>
+                            <DataGridTextColumn Binding="{Binding VILLAGE.NAME}" Header="VILLAGE" Width="140"/>
+                            <DataGridTextColumn Binding="{Binding VILLAGE.DISTRICT.NAME}" Header="DISTRICT" Width="140"/>
+                            <DataGridTextColumn Binding="{Binding VILLAGE.DISTRICT.REGENCy.NAME}" Header="REGENCY" Width="140"/>
+                            <DataGridTextColumn Binding="{Binding VILLAGE.DISTRICT.REGENCy.PROVINCE.NAME}" Header="PROVINCE" Width="100"/>
+                        </DataGrid.Columns>
+                    </DataGrid>
+                    <Rectangle Height="490" Margin="0,10,10.4,0" VerticalAlignment="Top" Fill="#FF6FC9C1" HorizontalAlignment="Right" Width="365"/>
+                    <Label x:Name="label1_Copy4" Content="Input Data" Margin="0,10,115.4,0" VerticalAlignment="Top" FontFamily="Segoe UI Black" Foreground="White" FontSize="16" HorizontalAlignment="Right" Width="248"/>
+                    <Button x:Name="addwrbtn" Content="" HorizontalAlignment="Left" Margin="988,364,0,0" VerticalAlignment="Top" Width="50" Height="50" Click="addwrbtn_Click">
                         <Button.Background>
                             <ImageBrush ImageSource="/DatabaseFirst_WPF_Ekspedisi;component/Images/add.jpg"/>
                         </Button.Background>
                     </Button>
-                    <TextBox x:Name="aidbox" HorizontalAlignment="Left" Height="23" Margin="543,77,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="193" IsReadOnly="True"/>
-                    <Label x:Name="label1_Copy10" Content="ID" HorizontalAlignment="Left" Margin="408,77,0,0" VerticalAlignment="Top" FontFamily="Segoe UI Black" FontSize="10" Width="127" Height="23"/>
-                    <TextBox x:Name="anamebox" HorizontalAlignment="Left" Height="23" Margin="543,105,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="193"/>
-                    <Label x:Name="label1_Copy11" Content="Name" HorizontalAlignment="Left" Margin="408,105,0,0" VerticalAlignment="Top" FontFamily="Segoe UI Black" FontSize="10" Width="127" Height="23"/>
-                    <TextBox x:Name="aprovincebox" HorizontalAlignment="Left" Height="23" Margin="543,133,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="193"/>
-                    <Label x:Name="label1_Copy12" Content="Province" HorizontalAlignment="Left" Margin="408,133,0,0" VerticalAlignment="Top" FontFamily="Segoe UI Black" FontSize="10" Width="127" Height="23"/>
-                    <TextBox x:Name="asubdistrictbox" HorizontalAlignment="Left" Height="23" Margin="543,190,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="193"/>
-                    <Label x:Name="label1_Copy13" Content="Sub District" HorizontalAlignment="Left" Margin="408,190,0,0" VerticalAlignment="Top" FontFamily="Segoe UI Black" FontSize="10" Width="127" Height="23"/>
-                    <TextBox x:Name="alocationbox" HorizontalAlignment="Left" Height="23" Margin="543,218,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="193"/>
-                    <Label x:Name="label1_Copy14" Content="Location" HorizontalAlignment="Left" Margin="408,218,0,0" VerticalAlignment="Top" FontFamily="Segoe UI Black" FontSize="10" Width="127" Height="23"/>
-                    <Label x:Name="label1_Copy15" Content="Warehouse Name" HorizontalAlignment="Left" Margin="408,246,0,0" VerticalAlignment="Top" FontFamily="Segoe UI Black" FontSize="10" Width="127" Height="23"/>
-                    <ComboBox x:Name="awarehousebox" HorizontalAlignment="Left" Margin="543,247,0,0" VerticalAlignment="Top" Width="193"/>
-                    <Button x:Name="Aupdate" Content="UPDATE" HorizontalAlignment="Left" Margin="450,352,0,0" VerticalAlignment="Top" Width="85" Height="29" FontSize="18" FontFamily="Segoe UI Black" Click="Aupdate_Click"/>
-                    <Button x:Name="Adelete" Content="DELETE" HorizontalAlignment="Left" Margin="611,352,0,0" VerticalAlignment="Top" Width="85" Height="29" FontSize="18" FontFamily="Segoe UI Black" Click="Adelete_Click"/>
-                    <TextBox x:Name="aregencybox" HorizontalAlignment="Left" Height="23" Margin="543,161,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="193"/>
-                    <Label x:Name="label1_Copy31" Content="Regency" HorizontalAlignment="Left" Margin="408,161,0,0" VerticalAlignment="Top" FontFamily="Segoe UI Black" FontSize="10" Width="127" Height="23"/>
+                    <TextBox x:Name="bidbox" Height="23" Margin="0,49,215.4,0" TextWrapping="Wrap" VerticalAlignment="Top" IsReadOnly="True" HorizontalAlignment="Right" Width="60"/>
+                    <Label x:Name="label1_Copy16" Content="ID" Margin="0,49,287.4,0" VerticalAlignment="Top" FontFamily="Segoe UI Black" FontSize="10" Height="23" Foreground="White" Background="{x:Null}" HorizontalContentAlignment="Right" HorizontalAlignment="Right" Width="76"/>
+                    <Label x:Name="label1_Copy17" Content="DISTRICT" Margin="0,173,287.4,0" VerticalAlignment="Top" FontFamily="Segoe UI Black" FontSize="10" Height="23" Foreground="White" Background="{x:Null}" HorizontalContentAlignment="Right" HorizontalAlignment="Right" Width="76"/>
+                    <Label x:Name="label1_Copy18" Content="REGENCY" Margin="0,142,287.4,0" VerticalAlignment="Top" FontFamily="Segoe UI Black" FontSize="10" Height="23" Foreground="White" Background="{x:Null}" HorizontalContentAlignment="Right" HorizontalAlignment="Right" Width="76"/>
+                    <Label x:Name="label1_Copy19" Content="PROVINCE" Margin="0,111,287.4,0" VerticalAlignment="Top" FontFamily="Segoe UI Black" FontSize="10" Height="23" Foreground="White" Background="{x:Null}" HorizontalContentAlignment="Right" HorizontalAlignment="Right" Width="76"/>
+                    <TextBox x:Name="bnamebox" Height="23" Margin="0,80,125.4,0" TextWrapping="Wrap" VerticalAlignment="Top" HorizontalAlignment="Right" Width="150"/>
+                    <Label x:Name="label1_Copy20" Content="NAME" Margin="0,80,287.4,0" VerticalAlignment="Top" FontFamily="Segoe UI Black" FontSize="10" Height="23" Foreground="White" Background="{x:Null}" HorizontalContentAlignment="Right" HorizontalAlignment="Right" Width="76"/>
+                    <Button x:Name="Bupdate" Content="UPDATE" HorizontalAlignment="Left" Margin="1052,364,0,0" VerticalAlignment="Top" Width="85" Height="50" FontSize="18" FontFamily="Segoe UI Black" Click="Bupdate_Click" Background="#FF2B89FF"/>
+                    <Button x:Name="Bdelete" Content="DELETE" HorizontalAlignment="Left" Margin="1152,364,0,0" VerticalAlignment="Top" Width="85" Height="50" FontSize="18" FontFamily="Segoe UI Black" Click="Bdelete_Click" Background="#FFF0523F"/>
+                    <Label x:Name="label1_Copy32" Content="VILLAGE" Margin="0,204,287.4,0" VerticalAlignment="Top" FontFamily="Segoe UI Black" FontSize="10" Height="23" Foreground="White" Background="{x:Null}" HorizontalContentAlignment="Right" HorizontalAlignment="Right" Width="76"/>
+                    <TextBox x:Name="blocationbox_Copy" Height="51" Margin="0,238,125.4,0" TextWrapping="Wrap" VerticalAlignment="Top" HorizontalAlignment="Right" Width="150"/>
+                    <Label x:Name="label1_Copy3" Content="ADDRESS" Margin="0,238,287.4,0" VerticalAlignment="Top" FontFamily="Segoe UI Black" FontSize="10" Height="23" Foreground="White" Background="{x:Null}" HorizontalContentAlignment="Right" HorizontalAlignment="Right" Width="76"/>
+                    <ComboBox x:Name="comboBox" Margin="0,111,125.4,0" VerticalAlignment="Top" HorizontalAlignment="Right" Width="150"/>
+                    <ComboBox x:Name="comboBox1" Margin="0,142,125.4,0" VerticalAlignment="Top" HorizontalAlignment="Right" Width="150"/>
+                    <ComboBox x:Name="comboBox2" Margin="0,173,125.4,0" VerticalAlignment="Top" HorizontalAlignment="Right" Width="150"/>
+                    <ComboBox x:Name="comboBox3" Margin="0,208,125.4,0" VerticalAlignment="Top" HorizontalAlignment="Right" Width="150"/>
+                    <TextBox x:Name="textBox" HorizontalAlignment="Left" Height="23" Margin="67,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="290"/>
+                    <Label x:Name="label12" Content="Search :" HorizontalAlignment="Left" Margin="11,7,0,0" VerticalAlignment="Top"/>
+                    <Button x:Name="button" Content="SEARCH" HorizontalAlignment="Left" Margin="368,11,0,0" VerticalAlignment="Top" Width="60"/>
                 </Grid>
             </TabItem>
-            <TabItem x:Name="twarehouse" Header="Warehouse" Margin="-2,-1,-1.8,0" Height="22" VerticalAlignment="Top">
+            <TabItem x:Name="temployee" Header="Employees" Margin="-2,-1,-2,1" Height="22" VerticalAlignment="Bottom">
                 <Grid Background="#FFE5E5E5">
-                    <DataGrid x:Name="datawarehouse" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Height="434" Width="367" SelectionChanged="datawarehouse_SelectionChanged" CanUserReorderColumns="False" AutoGenerateColumns="False" IsReadOnly="True">
-                        <DataGrid.Columns>
-                            <DataGridTextColumn Binding="{Binding ID}" Header="ID" CanUserResize="False" MaxWidth="50"/>
-                            <DataGridTextColumn Binding="{Binding NAME}" Header="Name"/>
-                            <DataGridTextColumn Binding="{Binding PROVINCE}" Header="Province"/>
-                            <DataGridTextColumn Binding="{Binding REGENCY}" Header="Regency"/>
-                            <DataGridTextColumn Binding="{Binding SUB_DISTRICT}" Header="Sub District"/>
-                            <DataGridTextColumn Binding="{Binding LOCATION}" Header="Location"/>
-                        </DataGrid.Columns>
-                    </DataGrid>
-                    <Rectangle HorizontalAlignment="Left" Height="434" Margin="382,10,0,0" Stroke="Black" VerticalAlignment="Top" Width="377">
-                        <Rectangle.Fill>
-                            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                                <GradientStop Color="#FF5CC3C5" Offset="0"/>
-                                <GradientStop Color="White" Offset="1"/>
-                            </LinearGradientBrush>
-                        </Rectangle.Fill>
-                    </Rectangle>
-                    <Label x:Name="label1_Copy4" Content="Manage Warehouse" HorizontalAlignment="Left" Margin="408,22,0,0" VerticalAlignment="Top" FontFamily="Segoe UI Black" FontSize="21" Width="328" HorizontalContentAlignment="Center"/>
-                    <Button x:Name="addwrbtn" Content="" HorizontalAlignment="Left" Margin="716,10,0,0" VerticalAlignment="Top" Width="43" Height="34" Click="addwrbtn_Click">
-                        <Button.Background>
-                            <ImageBrush ImageSource="/DatabaseFirst_WPF_Ekspedisi;component/Images/add.jpg"/>
-                        </Button.Background>
-                    </Button>
-                    <TextBox x:Name="bidbox" HorizontalAlignment="Left" Height="23" Margin="543,77,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="193" IsReadOnly="True"/>
-                    <Label x:Name="label1_Copy16" Content="ID" HorizontalAlignment="Left" Margin="408,77,0,0" VerticalAlignment="Top" FontFamily="Segoe UI Black" FontSize="10" Width="127" Height="23"/>
-                    <TextBox x:Name="bsubdistrictbox" HorizontalAlignment="Left" Height="23" Margin="543,189,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="193"/>
-                    <Label x:Name="label1_Copy17" Content="Sub District" HorizontalAlignment="Left" Margin="408,189,0,0" VerticalAlignment="Top" FontFamily="Segoe UI Black" FontSize="10" Width="127" Height="23"/>
-                    <TextBox x:Name="bregencybox" HorizontalAlignment="Left" Height="23" Margin="543,161,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="193"/>
-                    <Label x:Name="label1_Copy18" Content="Regency" HorizontalAlignment="Left" Margin="408,161,0,0" VerticalAlignment="Top" FontFamily="Segoe UI Black" FontSize="10" Width="127" Height="23"/>
-                    <TextBox x:Name="bprovincebox" HorizontalAlignment="Left" Height="23" Margin="543,133,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="193"/>
-                    <Label x:Name="label1_Copy19" Content="Province" HorizontalAlignment="Left" Margin="408,133,0,0" VerticalAlignment="Top" FontFamily="Segoe UI Black" FontSize="10" Width="127" Height="23"/>
-                    <TextBox x:Name="bnamebox" HorizontalAlignment="Left" Height="23" Margin="543,105,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="193"/>
-                    <Label x:Name="label1_Copy20" Content="Name" HorizontalAlignment="Left" Margin="408,105,0,0" VerticalAlignment="Top" FontFamily="Segoe UI Black" FontSize="10" Width="127" Height="23"/>
-                    <Button x:Name="Bupdate" Content="UPDATE" HorizontalAlignment="Left" Margin="450,352,0,0" VerticalAlignment="Top" Width="85" Height="29" FontSize="18" FontFamily="Segoe UI Black" Click="Bupdate_Click"/>
-                    <Button x:Name="Bdelete" Content="DELETE" HorizontalAlignment="Left" Margin="611,352,0,0" VerticalAlignment="Top" Width="85" Height="29" FontSize="18" FontFamily="Segoe UI Black" Click="Bdelete_Click"/>
-                    <TextBox x:Name="blocationbox" HorizontalAlignment="Left" Height="23" Margin="543,217,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="193"/>
-                    <Label x:Name="label1_Copy32" Content="Location" HorizontalAlignment="Left" Margin="408,217,0,0" VerticalAlignment="Top" FontFamily="Segoe UI Black" FontSize="10" Width="127" Height="23"/>
-                </Grid>
-            </TabItem>
-            <TabItem x:Name="temployee" Header="Employees" Margin="-2,-2,-2,0" Height="22">
-                <Grid Background="#FFE5E5E5">
-                    <DataGrid x:Name="dataemployees" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Height="434" Width="367" SelectionChanged="dataGrid_SelectionChanged" AutoGenerateColumns="False" CanUserReorderColumns="False" IsReadOnly="True">
+                    <DataGrid x:Name="dataemployees" Margin="10,35,447.4,0" VerticalAlignment="Top" Height="465" SelectionChanged="dataGrid_SelectionChanged" AutoGenerateColumns="False" CanUserReorderColumns="False" IsReadOnly="True">
                         <DataGrid.Columns>
                             <DataGridTextColumn Binding="{Binding ID}" Header="ID" CanUserResize="False" MaxWidth="50"/>
                             <DataGridTextColumn Binding="{Binding NAME}" Header="Name"/>
                             <DataGridTextColumn Binding="{Binding POSITION}" Header="Position"/>
+                            <DataGridTextColumn Binding="{Binding USERNAME}" Header="USERNAME"/>
+                            <DataGridTextColumn Binding="{Binding PASSWORD}" Header="PASSWORD"/>
+                            <DataGridTextColumn Binding="{Binding BRANCH.NAME}" Header="BRANCH"/>
                         </DataGrid.Columns>
                     </DataGrid>
-                    <Rectangle HorizontalAlignment="Left" Height="434" Margin="382,10,0,0" Stroke="Black" VerticalAlignment="Top" Width="377" Name="a">
-                        <Rectangle.Fill>
-                            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                                <GradientStop Color="#FF5CC3C5" Offset="0"/>
-                                <GradientStop Color="White" Offset="1"/>
-                            </LinearGradientBrush>
-                        </Rectangle.Fill>
-                    </Rectangle>
-                    <TextBox x:Name="positionbox" HorizontalAlignment="Left" Height="23" Margin="543,134,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="193"/>
-                    <TextBox x:Name="idbox" HorizontalAlignment="Left" Height="23" Margin="543,77,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="193" IsReadOnly="True"/>
-                    <TextBox x:Name="namebox" HorizontalAlignment="Left" Height="23" Margin="543,106,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="193"/>
-                    <Button x:Name="updatebtn" Content="UPDATE" HorizontalAlignment="Left" Margin="450,352,0,0" VerticalAlignment="Top" Width="85" Height="29" FontSize="18" FontFamily="Segoe UI Black" Click="updatebtn_Click"/>
-                    <Button x:Name="deletebtn" Content="DELETE" HorizontalAlignment="Left" Margin="611,352,0,0" VerticalAlignment="Top" Width="85" Height="29" FontSize="18" FontFamily="Segoe UI Black" Click="deletebtn_Click"/>
-                    <Label x:Name="label1" Content="Manage Employee" HorizontalAlignment="Left" Margin="408,22,0,0" VerticalAlignment="Top" FontFamily="Segoe UI Black" FontSize="21" Width="328" HorizontalContentAlignment="Center"/>
-                    <Label x:Name="label1_Copy" Content="ID" HorizontalAlignment="Left" Margin="408,77,0,0" VerticalAlignment="Top" FontFamily="Segoe UI Black" FontSize="10" Width="127" Height="23"/>
-                    <Label x:Name="label1_Copy1" Content="NAME" HorizontalAlignment="Left" Margin="408,106,0,0" VerticalAlignment="Top" FontFamily="Segoe UI Black" FontSize="10" Width="127" Height="23"/>
-                    <Label x:Name="label1_Copy2" Content="POSITION" HorizontalAlignment="Left" Margin="408,134,0,0" VerticalAlignment="Top" FontFamily="Segoe UI Black" FontSize="10" Width="127" Height="23"/>
-                    <Button x:Name="addempbtn" Content="" HorizontalAlignment="Left" Margin="716,10,0,0" VerticalAlignment="Top" Width="43" Height="34" Click="addempbtn_Click_1">
-                        <Button.Background>
-                            <ImageBrush ImageSource="/DatabaseFirst_WPF_Ekspedisi;component/Images/add.jpg"/>
-                        </Button.Background>
-                    </Button>
+                    <Rectangle Height="490" Margin="905,10,10.4,0" VerticalAlignment="Top" Name="a" Fill="#FF6FC9C1"/>
+                    <TextBox x:Name="txtPositionEmployee" HorizontalAlignment="Left" Height="23" Margin="1023,186,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="157"/>
+                    <TextBox x:Name="txtIdEmployee" HorizontalAlignment="Left" Height="23" Margin="1023,118,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="157" IsReadOnly="True"/>
+                    <TextBox x:Name="txtNameEmployee" HorizontalAlignment="Left" Height="23" Margin="1023,152,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="157"/>
+                    <Label x:Name="label1" Content="Manage Employee" HorizontalAlignment="Left" Margin="927,75,0,0" VerticalAlignment="Top" FontFamily="Segoe UI Black" FontSize="21" Width="260" HorizontalContentAlignment="Center" Foreground="White"/>
+                    <Label x:Name="label1_Copy" Content="ID" HorizontalAlignment="Left" Margin="933,117,0,0" VerticalAlignment="Top" FontFamily="Segoe UI Black" Width="80" Height="23" Foreground="White" Background="{x:Null}" HorizontalContentAlignment="Right"/>
+                    <Label x:Name="label1_Copy1" Content="NAME" HorizontalAlignment="Left" Margin="933,152,0,0" VerticalAlignment="Top" FontFamily="Segoe UI Black" Width="80" Height="23" Foreground="White" Background="{x:Null}" HorizontalContentAlignment="Right"/>
+                    <Label x:Name="label1_Copy2" Content="POSITION" HorizontalAlignment="Left" Margin="933,186,0,0" VerticalAlignment="Top" FontFamily="Segoe UI Black" Width="80" Height="23" Foreground="White" Background="{x:Null}" HorizontalContentAlignment="Right"/>
+                    <Label x:Name="label13" Content="Search :" HorizontalAlignment="Left" Margin="11,4,0,0" VerticalAlignment="Top"/>
+                    <Button x:Name="button1" Content="SEARCH" HorizontalAlignment="Left" Margin="357,10,0,0" VerticalAlignment="Top" Width="55"/>
+                    <TextBox x:Name="textBox1" HorizontalAlignment="Left" Height="23" Margin="67,7,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="280"/>
+                    <TextBox x:Name="txtUsernameEmployee" HorizontalAlignment="Left" Height="23" Margin="1023,220,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="157"/>
+                    <Label x:Name="label1_Copy9" Content="USERNAME" HorizontalAlignment="Left" Margin="933,220,0,0" VerticalAlignment="Top" FontFamily="Segoe UI Black" Width="80" Height="23" Foreground="White" Background="{x:Null}" HorizontalContentAlignment="Right"/>
+                    <PasswordBox x:Name="txtPasswordEmployee" HorizontalAlignment="Left" Margin="1023,254,0,0" VerticalAlignment="Top" Width="157"/>
+                    <Label x:Name="label1_Copy10" Content="PASSWORD" HorizontalAlignment="Left" Margin="933,251,0,0" VerticalAlignment="Top" FontFamily="Segoe UI Black" Width="80" Height="23" Foreground="White" Background="{x:Null}" HorizontalContentAlignment="Right"/>
+                    <ComboBox x:Name="cmbIdBranchEmployee" HorizontalAlignment="Left" Margin="1023,285,0,0" VerticalAlignment="Top" Width="157"/>
+                    <Button x:Name="btnSaveEmployee" Content="save" HorizontalAlignment="Left" Margin="963,360,0,0" VerticalAlignment="Top" Width="75" Click="btnSaveEmployee_Click"/>
+                    <Button x:Name="btnEditEmployee" Content="Edit" HorizontalAlignment="Left" Margin="1088,360,0,0" VerticalAlignment="Top" Width="75" Click="btnEditEmployee_Click"/>
+                    <Button x:Name="btnDeleteEmployee" Content="Delete" HorizontalAlignment="Left" Margin="1209,360,0,0" VerticalAlignment="Top" Width="75" Click="btnDeleteEmployee_Click"/>
+                    <Label x:Name="label1_Copy11" Content="BRANCH" HorizontalAlignment="Left" Margin="938,285,0,0" VerticalAlignment="Top" FontFamily="Segoe UI Black" Width="80" Height="23" Foreground="White" Background="{x:Null}" HorizontalContentAlignment="Right"/>
                 </Grid>
             </TabItem>
             <TabItem x:Name="tpackage" Header="Package" Margin="-2,-2,-2,0" Height="22">
                 <Grid Background="#FFE5E5E5">
-                    <DataGrid x:Name="datapackage" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Height="434" Width="367" SelectionChanged="datapackage_SelectionChanged" CanUserReorderColumns="False" AutoGenerateColumns="False" IsReadOnly="True">
+                    <DataGrid x:Name="datapackage" Margin="10,10,406.4,0" VerticalAlignment="Top" Height="490" SelectionChanged="datapackage_SelectionChanged" CanUserReorderColumns="False" AutoGenerateColumns="False" IsReadOnly="True">
                         <DataGrid.Columns>
                             <DataGridTextColumn Binding="{Binding ID}" Header="ID" CanUserResize="False" MaxWidth="50"/>
                             <DataGridTextColumn Binding="{Binding NAME}" Header="Name"/>
                             <DataGridTextColumn Binding="{Binding PRICE}" Header="Price"/>
                         </DataGrid.Columns>
                     </DataGrid>
-                    <Rectangle HorizontalAlignment="Left" Height="434" Margin="382,10,0,0" Stroke="Black" VerticalAlignment="Top" Width="377">
-                        <Rectangle.Fill>
-                            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                                <GradientStop Color="#FF5CC3C5" Offset="0"/>
-                                <GradientStop Color="White" Offset="1"/>
-                            </LinearGradientBrush>
-                        </Rectangle.Fill>
-                    </Rectangle>
-                    <Label x:Name="label1_Copy5" Content="Manage Package" HorizontalAlignment="Left" Margin="408,22,0,0" VerticalAlignment="Top" FontFamily="Segoe UI Black" FontSize="21" Width="328" HorizontalContentAlignment="Center"/>
-                    <Button x:Name="addpackbtn" Content="" HorizontalAlignment="Left" Margin="716,10,0,0" VerticalAlignment="Top" Width="43" Height="34">
-                        <Button.Background>
-                            <ImageBrush ImageSource="/DatabaseFirst_WPF_Ekspedisi;component/Images/add.jpg"/>
-                        </Button.Background>
-                    </Button>
-                    <TextBox x:Name="didbox" HorizontalAlignment="Left" Height="23" Margin="543,77,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="193" IsReadOnly="True"/>
-                    <Label x:Name="label1_Copy21" Content="ID" HorizontalAlignment="Left" Margin="408,77,0,0" VerticalAlignment="Top" FontFamily="Segoe UI Black" FontSize="10" Width="127" Height="23"/>
-                    <TextBox x:Name="dpricebox" HorizontalAlignment="Left" Height="23" Margin="543,133,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="193"/>
-                    <Label x:Name="label1_Copy22" Content="Price" HorizontalAlignment="Left" Margin="408,133,0,0" VerticalAlignment="Top" FontFamily="Segoe UI Black" FontSize="10" Width="127" Height="23"/>
-                    <TextBox x:Name="dnamebox" HorizontalAlignment="Left" Height="23" Margin="543,105,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="193"/>
-                    <Label x:Name="label1_Copy23" Content="Name" HorizontalAlignment="Left" Margin="408,105,0,0" VerticalAlignment="Top" FontFamily="Segoe UI Black" FontSize="10" Width="127" Height="23"/>
-                    <Button x:Name="Dupdate" Content="UPDATE" HorizontalAlignment="Left" Margin="450,352,0,0" VerticalAlignment="Top" Width="85" Height="29" FontSize="18" FontFamily="Segoe UI Black" Click="Dupdate_Click"/>
-                    <Button x:Name="Ddelete" Content="DELETE" HorizontalAlignment="Left" Margin="611,352,0,0" VerticalAlignment="Top" Width="85" Height="29" FontSize="18" FontFamily="Segoe UI Black" Click="Ddelete_Click"/>
-                </Grid>
-            </TabItem>
-            <TabItem x:Name="tassurance" Header="Assurance" Margin="-2,-2,-2,0" Height="22">
-                <Grid Background="#FFE5E5E5">
-                    <DataGrid x:Name="dataassurance" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Height="434" Width="367" SelectionChanged="dataassurance_SelectionChanged" CanUserReorderColumns="False" AutoGenerateColumns="False" IsReadOnly="True">
-                        <DataGrid.Columns>
-                            <DataGridTextColumn Binding="{Binding ID}" Header="ID" CanUserResize="False" MaxWidth="50"/>
-                            <DataGridTextColumn Binding="{Binding TYPES}" Header="Type"/>
-                            <DataGridTextColumn Binding="{Binding PRICE}" Header="Price"/>
-                        </DataGrid.Columns>
-                    </DataGrid>
-                    <Rectangle HorizontalAlignment="Left" Height="434" Margin="382,10,0,0" Stroke="Black" VerticalAlignment="Top" Width="377">
-                        <Rectangle.Fill>
-                            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                                <GradientStop Color="#FF5CC3C5" Offset="0"/>
-                                <GradientStop Color="White" Offset="1"/>
-                            </LinearGradientBrush>
-                        </Rectangle.Fill>
-                    </Rectangle>
-                    <Label x:Name="label1_Copy6" Content="Manage Assurance" HorizontalAlignment="Left" Margin="408,22,0,0" VerticalAlignment="Top" FontFamily="Segoe UI Black" FontSize="21" Width="328" HorizontalContentAlignment="Center"/>
-                    <Button x:Name="addassbtn" Content="" HorizontalAlignment="Left" Margin="716,10,0,0" VerticalAlignment="Top" Width="43" Height="34">
-                        <Button.Background>
-                            <ImageBrush ImageSource="/DatabaseFirst_WPF_Ekspedisi;component/Images/add.jpg"/>
-                        </Button.Background>
-                    </Button>
-                    <TextBox x:Name="eidbox" HorizontalAlignment="Left" Height="23" Margin="543,77,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="193" IsReadOnly="True"/>
-                    <Label x:Name="label1_Copy24" Content="ID" HorizontalAlignment="Left" Margin="408,77,0,0" VerticalAlignment="Top" FontFamily="Segoe UI Black" FontSize="10" Width="127" Height="23"/>
-                    <TextBox x:Name="epricebox" HorizontalAlignment="Left" Height="23" Margin="543,133,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="193"/>
-                    <Label x:Name="label1_Copy25" Content="Price" HorizontalAlignment="Left" Margin="408,133,0,0" VerticalAlignment="Top" FontFamily="Segoe UI Black" FontSize="10" Width="127" Height="23"/>
-                    <Label x:Name="label1_Copy26" Content="Type" HorizontalAlignment="Left" Margin="408,105,0,0" VerticalAlignment="Top" FontFamily="Segoe UI Black" FontSize="10" Width="127" Height="23"/>
-                    <ComboBox x:Name="etypescombobox" HorizontalAlignment="Left" Margin="543,106,0,0" VerticalAlignment="Top" Width="193"/>
+                    <Rectangle HorizontalAlignment="Left" Height="490" Margin="942,10,0,0" VerticalAlignment="Top" Width="373" Fill="#FF6FC9C1"/>
+                    <Label x:Name="label1_Copy5" Content="Manage Package" HorizontalAlignment="Left" Margin="1014,66,0,0" VerticalAlignment="Top" FontFamily="Segoe UI Black" FontSize="21" Width="260" HorizontalContentAlignment="Center" Foreground="White"/>
+                    <TextBox x:Name="txtIdPackage" HorizontalAlignment="Left" Height="23" Margin="1097,133,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="170" IsReadOnly="True"/>
+                    <Label x:Name="label1_Copy21" Content="ID" HorizontalAlignment="Left" Margin="1025,133,0,0" VerticalAlignment="Top" FontFamily="Segoe UI Black" FontSize="10" Width="64" Height="23" Foreground="White" Background="Black"/>
+                    <TextBox x:Name="txtPricePackage" HorizontalAlignment="Left" Height="23" Margin="1097,201,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="170"/>
+                    <Label x:Name="label1_Copy22" Content="Price" HorizontalAlignment="Left" Margin="1025,201,0,0" VerticalAlignment="Top" FontFamily="Segoe UI Black" FontSize="10" Width="64" Height="23" Foreground="White" Background="Black"/>
+                    <TextBox x:Name="txtNamePackage" HorizontalAlignment="Left" Height="23" Margin="1097,167,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="170"/>
+                    <Label x:Name="label1_Copy23" Content="Name" HorizontalAlignment="Left" Margin="1025,167,0,0" VerticalAlignment="Top" FontFamily="Segoe UI Black" FontSize="10" Width="64" Height="23" Foreground="White" Background="Black"/>
+                    <Button x:Name="btnSavePackage" Content="Save" HorizontalAlignment="Left" Margin="1029,295,0,0" VerticalAlignment="Top" Width="75" Click="btnSavePackage_Click"/>
+                    <Button x:Name="btnEditPackage" Content="Edit" HorizontalAlignment="Left" Margin="1109,295,0,0" VerticalAlignment="Top" Width="75" Click="btnEditPackage_Click"/>
+                    <Button x:Name="btnDeletePackage" Content="Delete" HorizontalAlignment="Left" Margin="1189,295,0,0" VerticalAlignment="Top" Width="75"/>
                 </Grid>
             </TabItem>
             <TabItem x:Name="tcategory" Header="Category" Margin="-2,-0.8,-2,1.2" Height="22">
                 <Grid Background="#FFE5E5E5">
-                    <DataGrid x:Name="datacategory" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Height="434" Width="367" SelectionChanged="datacategory_SelectionChanged" CanUserReorderColumns="False" AutoGenerateColumns="False" IsReadOnly="True">
+                    <DataGrid x:Name="datacategory" Margin="10,41,418.4,0" VerticalAlignment="Top" Height="459" SelectionChanged="datacategory_SelectionChanged" CanUserReorderColumns="False" AutoGenerateColumns="False" IsReadOnly="True">
                         <DataGrid.Columns>
                             <DataGridTextColumn Binding="{Binding ID}" Header="ID" CanUserResize="False" MaxWidth="50"/>
                             <DataGridTextColumn Binding="{Binding NAME}" Header="Name"/>
                         </DataGrid.Columns>
                     </DataGrid>
-                    <Rectangle HorizontalAlignment="Left" Height="434" Margin="382,10,0,0" Stroke="Black" VerticalAlignment="Top" Width="377">
-                        <Rectangle.Fill>
-                            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                                <GradientStop Color="#FF5CC3C5" Offset="0"/>
-                                <GradientStop Color="White" Offset="1"/>
-                            </LinearGradientBrush>
-                        </Rectangle.Fill>
-                    </Rectangle>
-                    <Label x:Name="label1_Copy7" Content="Manage Category" HorizontalAlignment="Left" Margin="408,22,0,0" VerticalAlignment="Top" FontFamily="Segoe UI Black" FontSize="21" Width="328" HorizontalContentAlignment="Center"/>
-                    <Button x:Name="addcatbtn" Content="" HorizontalAlignment="Left" Margin="716,10,0,0" VerticalAlignment="Top" Width="43" Height="34">
-                        <Button.Background>
-                            <ImageBrush ImageSource="/DatabaseFirst_WPF_Ekspedisi;component/Images/add.jpg"/>
-                        </Button.Background>
-                    </Button>
-                    <TextBox x:Name="fidbox" HorizontalAlignment="Left" Height="23" Margin="543,77,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="193" IsReadOnly="True"/>
-                    <Label x:Name="label1_Copy27" Content="ID" HorizontalAlignment="Left" Margin="408,77,0,0" VerticalAlignment="Top" FontFamily="Segoe UI Black" FontSize="10" Width="127" Height="23"/>
-                    <TextBox x:Name="fnamebox" HorizontalAlignment="Left" Height="23" Margin="543,105,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="193"/>
-                    <Label x:Name="label1_Copy28" Content="Name" HorizontalAlignment="Left" Margin="408,105,0,0" VerticalAlignment="Top" FontFamily="Segoe UI Black" FontSize="10" Width="127" Height="23"/>
+                    <Rectangle Height="486" Margin="929,14,10.4,0" Stroke="Black" VerticalAlignment="Top" Fill="#FF6FC9C1"/>
+                    <Label x:Name="label1_Copy7" Content="Manage Category" HorizontalAlignment="Left" Margin="1033,66,0,0" VerticalAlignment="Top" FontFamily="Segoe UI Black" FontSize="21" Width="260" HorizontalContentAlignment="Center" Foreground="White"/>
+                    <TextBox x:Name="txtIdCategory" HorizontalAlignment="Left" Height="23" Margin="1107,123,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="175" IsReadOnly="True"/>
+                    <Label x:Name="label1_Copy27" Content="ID" HorizontalAlignment="Left" Margin="1041,123,0,0" VerticalAlignment="Top" FontFamily="Segoe UI Black" Width="61" Height="23" Background="{x:Null}" Foreground="Black" FontWeight="Bold"/>
+                    <TextBox x:Name="txtNameCategory" HorizontalAlignment="Left" Height="23" Margin="1107,163,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="175"/>
+                    <Label x:Name="label1_Copy28" Content="Name" HorizontalAlignment="Left" Margin="1041,163,0,0" VerticalAlignment="Top" FontFamily="Segoe UI Black" Width="61" Height="23" Background="{x:Null}" Foreground="Black" FontWeight="Bold"/>
+                    <Button x:Name="btnSaveCategory" Content="Save" HorizontalAlignment="Left" Margin="988,222,0,0" VerticalAlignment="Top" Width="76" Click="btnSaveCategory_Click"/>
+                    <Button x:Name="btnEditCategory" Content="Edit" HorizontalAlignment="Left" Margin="1086,222,0,0" VerticalAlignment="Top" Width="75" RenderTransformOrigin="0.667,3"/>
+                    <Button x:Name="btnDeleteCategory" Content="Delete" HorizontalAlignment="Left" Margin="1166,222,0,0" VerticalAlignment="Top" Width="75"/>
+                    <TextBox x:Name="textBox3" HorizontalAlignment="Left" Height="23" Margin="66,12,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="408"/>
+                    <Label x:Name="label15" Content="Search :" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top"/>
+                    <Button x:Name="button3" Content="SEARCH" HorizontalAlignment="Left" Margin="485,14,0,0" VerticalAlignment="Top" Width="56" Height="19"/>
                 </Grid>
             </TabItem>
             <TabItem x:Name="tstatusshipping" Header="Stat_Shipping" Margin="-2,-0.8,-2,1.2" Height="22">
                 <Grid Background="#FFE5E5E5">
-                    <DataGrid x:Name="datastatshiping" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Height="434" Width="367" SelectionChanged="datastatshiping_SelectionChanged" CanUserReorderColumns="False" AutoGenerateColumns="False" IsReadOnly="True">
+                    <DataGrid x:Name="datastatshiping" Margin="10,52,428.4,9.6" SelectionChanged="datastatshiping_SelectionChanged" CanUserReorderColumns="False" AutoGenerateColumns="False" IsReadOnly="True">
                         <DataGrid.Columns>
                             <DataGridTextColumn Binding="{Binding ID}" Header="ID" CanUserResize="False" MaxWidth="50"/>
                             <DataGridTextColumn Binding="{Binding NAME}" Header="Name"/>
                         </DataGrid.Columns>
                     </DataGrid>
-                    <Rectangle HorizontalAlignment="Left" Height="434" Margin="382,10,0,0" Stroke="Black" VerticalAlignment="Top" Width="377">
-                        <Rectangle.Fill>
-                            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                                <GradientStop Color="#FF5CC3C5" Offset="0"/>
-                                <GradientStop Color="White" Offset="1"/>
-                            </LinearGradientBrush>
-                        </Rectangle.Fill>
-                    </Rectangle>
-                    <Label x:Name="label1_Copy8" Content="Manage Status Shipping" HorizontalAlignment="Left" Margin="408,22,0,0" VerticalAlignment="Top" FontFamily="Segoe UI Black" FontSize="21" Width="328" HorizontalContentAlignment="Center"/>
-                    <Button x:Name="addstatbtn" Content="" HorizontalAlignment="Left" Margin="716,10,0,0" VerticalAlignment="Top" Width="43" Height="34">
-                        <Button.Background>
-                            <ImageBrush ImageSource="/DatabaseFirst_WPF_Ekspedisi;component/Images/add.jpg"/>
-                        </Button.Background>
-                    </Button>
-                    <TextBox x:Name="gidbox" HorizontalAlignment="Left" Height="23" Margin="543,77,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="193" IsReadOnly="True"/>
-                    <Label x:Name="label1_Copy29" Content="ID" HorizontalAlignment="Left" Margin="408,77,0,0" VerticalAlignment="Top" FontFamily="Segoe UI Black" FontSize="10" Width="127" Height="23"/>
-                    <TextBox x:Name="gnamebox" HorizontalAlignment="Left" Height="23" Margin="543,105,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="193"/>
-                    <Label x:Name="label1_Copy30" Content="Name" HorizontalAlignment="Left" Margin="408,105,0,0" VerticalAlignment="Top" FontFamily="Segoe UI Black" FontSize="10" Width="127" Height="23"/>
+                    <Rectangle HorizontalAlignment="Left" Height="490" Margin="913,10,0,0" Stroke="Black" VerticalAlignment="Top" Width="402" Fill="#FF6FC9C1"/>
+                    <Label x:Name="label1_Copy8" Content="Manage Status Shipping" HorizontalAlignment="Left" Margin="1022,66,0,0" VerticalAlignment="Top" FontFamily="Segoe UI Black" FontSize="21" Width="260" HorizontalContentAlignment="Center" Foreground="White"/>
+                    <TextBox x:Name="txtIdStatus" HorizontalAlignment="Left" Height="23" Margin="1100,133,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="174" IsReadOnly="True"/>
+                    <Label x:Name="label1_Copy29" Content="ID" HorizontalAlignment="Left" Margin="1032,133,0,0" VerticalAlignment="Top" FontFamily="Segoe UI Black" FontSize="10" Width="60" Height="23" Background="Black" Foreground="White"/>
+                    <TextBox x:Name="txtNameStatus" HorizontalAlignment="Left" Height="23" Margin="1100,167,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="174"/>
+                    <Label x:Name="label1_Copy30" Content="Name" HorizontalAlignment="Left" Margin="1032,167,0,0" VerticalAlignment="Top" FontFamily="Segoe UI Black" FontSize="10" Width="60" Height="23" Foreground="White" Background="Black"/>
+                    <Button x:Name="btnSaveStatus" Content="Save" HorizontalAlignment="Left" Margin="1008,234,0,0" VerticalAlignment="Top" Width="76" Click="btnSaveStatus_Click"/>
+                    <Button x:Name="btnEditStatus" Content="Edit" HorizontalAlignment="Left" Margin="1100,234,0,0" VerticalAlignment="Top" Width="74" RenderTransformOrigin="0.405,0.455"/>
+                    <Button x:Name="btnDeleteStatus" Content="Delete" HorizontalAlignment="Left" Margin="1207,234,0,0" VerticalAlignment="Top" Width="75"/>
+                    <Label x:Name="label14" Content="Search :" HorizontalAlignment="Left" Margin="14,11,0,0" VerticalAlignment="Top"/>
+                    <Button x:Name="button2" Content="SEARCH" HorizontalAlignment="Left" Margin="467,17,0,0" VerticalAlignment="Top" Width="68"/>
+                    <TextBox x:Name="textBox2" HorizontalAlignment="Left" Height="23" Margin="69,14,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="382"/>
                 </Grid>
             </TabItem>
             <TabItem x:Name="tshipping" Header="Shipping" Margin="-2,-0.8,-2,1.2" Height="22">
                 <Grid Background="#FFE5E5E5">
-                    <DataGrid x:Name="datashipping" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Height="434" Width="367" SelectionChanged="dataGrid_SelectionChanged" CanUserReorderColumns="False" AutoGenerateColumns="False" IsReadOnly="True">
+                    <DataGrid x:Name="datashipping" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Height="490" Width="1310" SelectionChanged="dataGrid_SelectionChanged" CanUserReorderColumns="False" AutoGenerateColumns="False" IsReadOnly="True">
                         <DataGrid.Columns>
                             <DataGridTextColumn Binding="{Binding ID}" Header="ID" CanUserResize="False" MaxWidth="50"/>
                             <DataGridTextColumn Binding="{Binding DATE_SHIPPING}" Header="Date Shipping"/>
@@ -292,28 +237,23 @@
                             <DataGridTextColumn Binding="{Binding PACKAGE.NAME}" Header="Package Nmae"/>
                         </DataGrid.Columns>
                     </DataGrid>
-                    <Rectangle HorizontalAlignment="Left" Height="434" Margin="382,10,0,0" Stroke="Black" VerticalAlignment="Top" Width="377">
-                        <Rectangle.Fill>
-                            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                                <GradientStop Color="#FF5CC3C5" Offset="0"/>
-                                <GradientStop Color="White" Offset="1"/>
-                            </LinearGradientBrush>
-                        </Rectangle.Fill>
-                    </Rectangle>
-                    <Label x:Name="label1_Copy9" Content="Manage Shipping" HorizontalAlignment="Left" Margin="408,22,0,0" VerticalAlignment="Top" FontFamily="Segoe UI Black" FontSize="21" Width="328" HorizontalContentAlignment="Center"/>
-                    <Button x:Name="addshipbtn" Content="" HorizontalAlignment="Left" Margin="716,10,0,0" VerticalAlignment="Top" Width="43" Height="34">
-                        <Button.Background>
-                            <ImageBrush ImageSource="/DatabaseFirst_WPF_Ekspedisi;component/Images/add.jpg"/>
-                        </Button.Background>
-                    </Button>
+                </Grid>
+            </TabItem>
+            <TabItem Header="Regions" HorizontalAlignment="Left" Height="22" VerticalAlignment="Top" Width="57">
+                <Grid Background="#FFE5E5E5">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    <DataGrid x:Name="dataGrid" HorizontalAlignment="Left" Height="490" Margin="14,10,0,0" VerticalAlignment="Top" Width="1306" AutoGenerateColumns="False"/>
                 </Grid>
             </TabItem>
         </TabControl>
-        <Button x:Name="logout" Content="" Margin="745,10,9.6,0" VerticalAlignment="Top" Height="39" Click="logout_Click">
-            <Button.Background>
-                <ImageBrush ImageSource="/DatabaseFirst_WPF_Ekspedisi;component/Images/LogoutIcon.jpg"/>
-            </Button.Background>
+        <Button x:Name="logout" Margin="0,7,8.4,0" VerticalAlignment="Top" Height="53" Click="logout_Click" HorizontalAlignment="Right" Width="55" Background="{x:Null}" BorderThickness="0">
+            <Image x:Name="image" Height="43" Width="55" Source="/DatabaseFirst_WPF_Ekspedisi;component/Images/logout.png"/>
         </Button>
-        <Label x:Name="label" Content="MANAGE APPS" HorizontalAlignment="Left" Margin="64,10,0,0" VerticalAlignment="Top" Width="681" Height="47" FontFamily="Segoe UI Black" FontSize="30" HorizontalContentAlignment="Center"/>
+        <Label x:Name="label" Content="MANAGE APPS" Margin="10,10,115.4,0" VerticalAlignment="Top" Height="47" FontFamily="Segoe UI Black" FontSize="30" HorizontalContentAlignment="Center" Foreground="White"/>
+        <Button x:Name="menu" Margin="0,7,65,0" VerticalAlignment="Top" Height="50" Click="menu_Click" HorizontalAlignment="Right" Width="50" Background="{x:Null}" BorderThickness="0">
+            <Image x:Name="image1" Height="48" Width="50" Source="/DatabaseFirst_WPF_Ekspedisi;component/Images/home-button-icon-png-23.png"/>
+        </Button>
     </Grid>
 </Window>

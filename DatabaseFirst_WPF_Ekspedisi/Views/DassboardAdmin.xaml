@@ -9,26 +9,64 @@
     <Grid>
         <Grid.Background>
             <LinearGradientBrush EndPoint="0.5,1" MappingMode="RelativeToBoundingBox" StartPoint="0.5,0">
-                <GradientStop Color="Blue" Offset="0.418"/>
-                <GradientStop Color="#FFFF8900" Offset="1"/>
+                <GradientStop Color="#FF96F959"/>
+                <GradientStop Color="White" Offset="0.505"/>
+                <GradientStop Color="#FF84F63D" Offset="1"/>
             </LinearGradientBrush>
         </Grid.Background>
-        <Label x:Name="label2" Content="E K S P E D I S I&#xA;     &quot;CEPAT&quot;" HorizontalAlignment="Left" VerticalAlignment="Top" FontFamily="Segoe UI Black" FontSize="36" HorizontalContentAlignment="Center" Width="794" Background="#FF020410" Foreground="#FFD7E4F2" Height="112" Margin="0,0,-0.4,0"/>
-        <Button x:Name="shipping" Content="SHIPPING" HorizontalAlignment="Left" Margin="90,207,0,0" VerticalAlignment="Top" Width="255" Height="255" UseLayoutRounding="True" FontSize="30" FontFamily="Segoe UI Black" HorizontalContentAlignment="Center" VerticalContentAlignment="Bottom">
+        <Label x:Name="label2" Content="E K S P E D I S I&#xA;      &quot;CEPAT&quot;" HorizontalAlignment="Left" VerticalAlignment="Top" FontFamily="Bodoni MT Black" FontSize="36" HorizontalContentAlignment="Center" Width="794" Background="{x:Null}" Foreground="#FF003AFF" Height="90" Margin="0,0,-0.4,0">
+            <Label.Effect>
+                <DropShadowEffect Color="#FFEDEDED" BlurRadius="1"/>
+            </Label.Effect>
+        </Label>
+        <Button x:Name="shipping" HorizontalAlignment="Left" Margin="54,186,0,0" VerticalAlignment="Top" Width="210" Height="193" UseLayoutRounding="True" FontSize="30" FontFamily="Segoe UI Black" HorizontalContentAlignment="Center" VerticalContentAlignment="Bottom" BorderBrush="#FF003AFF" Click="shipping_Click" Background="{x:Null}" BorderThickness="3">
+            <Image x:Name="image" Height="182.7" Width="185.6" Source="/DatabaseFirst_WPF_Ekspedisi;component/Images/truck.png" UseLayoutRounding="False"/>
+        </Button>
+        <Button x:Name="app_master" HorizontalAlignment="Left" Margin="532,186,0,0" VerticalAlignment="Top" Width="210" Height="194" Click="app_master_Click" UseLayoutRounding="True" ForceCursor="True" FontFamily="Segoe UI Black" FontSize="30" VerticalContentAlignment="Bottom" BorderBrush="#FF003AFF" Background="{x:Null}" BorderThickness="3"/>
+        <Button x:Name="app_master_Copy" Content="" Margin="724,500,9.6,0" VerticalAlignment="Top" Height="60" Click="app_master_Copy_Click" BorderBrush="Black" TextOptions.TextHintingMode="Animated" BorderThickness="0">
             <Button.Background>
-                <ImageBrush ImageSource="/DatabaseFirst_WPF_Ekspedisi;component/Images/delivery-truck.jpg"/>
+                <ImageBrush ImageSource="/DatabaseFirst_WPF_Ekspedisi;component/Images/logout.png"/>
             </Button.Background>
         </Button>
-        <Button x:Name="app_master" Content="MANAGE APPS" HorizontalAlignment="Left" Margin="439,207,0,0" VerticalAlignment="Top" Width="255" Height="255" Click="app_master_Click" UseLayoutRounding="True" ForceCursor="True" FontFamily="Segoe UI Black" FontSize="30" VerticalContentAlignment="Bottom">
-            <Button.Background>
-                <ImageBrush ImageSource="/DatabaseFirst_WPF_Ekspedisi;component/Images/admin2.jpg"/>
-            </Button.Background>
+        <Button x:Name="tracking" HorizontalAlignment="Left" Margin="293,186,0,0" VerticalAlignment="Top" Width="210" Height="194" UseLayoutRounding="True" FontSize="30" FontFamily="Segoe UI Black" HorizontalContentAlignment="Center" VerticalContentAlignment="Bottom" BorderBrush="#FF003AFF" Click="tracking_Click" Background="{x:Null}" BorderThickness="3">
+            <Image x:Name="image_Copy" Height="184" Width="190" Source="/DatabaseFirst_WPF_Ekspedisi;component/Images/delivpoint.png"/>
         </Button>
-        <Button x:Name="app_master_Copy" Content="" Margin="734,510,-0.4,0" VerticalAlignment="Top" Height="60" Click="app_master_Copy_Click">
-            <Button.Background>
-                <ImageBrush ImageSource="/DatabaseFirst_WPF_Ekspedisi;component/Images/LogoutIcon.jpg"/>
-            </Button.Background>
-        </Button>
+        <Label x:Name="label" Content="TRACKING" HorizontalAlignment="Left" Margin="293,341,0,0" VerticalAlignment="Top" Width="210" HorizontalContentAlignment="Center" FontSize="25" Foreground="#FF315DD3" FontFamily="Times New Roman" Height="35" OpacityMask="#FFFF1717" Opacity="0.99" BorderThickness="0" FontWeight="SemiBold">
+            <Label.Effect>
+                <DropShadowEffect Color="White" BlurRadius="2" ShadowDepth="3"/>
+            </Label.Effect>
+        </Label>
+        <Label x:Name="label_Copy" Content="SHIPPING" HorizontalAlignment="Left" Margin="54,341,0,0" VerticalAlignment="Top" Width="210" HorizontalContentAlignment="Center" FontSize="25" Foreground="#FF315DD3" FontFamily="Times New Roman" Height="35" OpacityMask="#FFFF1717" Opacity="0.99" BorderThickness="0" FontWeight="SemiBold">
+            <Label.Effect>
+                <DropShadowEffect Color="White" BlurRadius="2" ShadowDepth="3"/>
+            </Label.Effect>
+        </Label>
+        <Rectangle Fill="#FF003AFF" HorizontalAlignment="Left" Height="5" Margin="0,104,-0.4,0" VerticalAlignment="Top" Width="794" RenderTransformOrigin="0.5,0.5">
+            <Rectangle.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform ScaleY="-1"/>
+                    <SkewTransform/>
+                    <RotateTransform/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Rectangle.RenderTransform>
+        </Rectangle>
+        <Rectangle Fill="#FF003AFF" HorizontalAlignment="Left" Height="5" Margin="1,465,-1.4,0" VerticalAlignment="Top" Width="794" RenderTransformOrigin="0.5,0.5">
+            <Rectangle.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform ScaleY="-1"/>
+                    <SkewTransform/>
+                    <RotateTransform/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Rectangle.RenderTransform>
+        </Rectangle>
+        <Image x:Name="image_Copy1" Source="/DatabaseFirst_WPF_Ekspedisi;component/Images/social_network-512.png" Margin="532,200,51.6,226.4"/>
+        <Label x:Name="label_Copy1" Content="MANAGE APPS" HorizontalAlignment="Left" Margin="532,344,0,0" VerticalAlignment="Top" Width="210" HorizontalContentAlignment="Center" FontSize="25" Foreground="#FF315DD3" FontFamily="Times New Roman" Height="35" OpacityMask="#FFFF1717" Opacity="0.99" BorderThickness="0" FontWeight="SemiBold">
+            <Label.Effect>
+                <DropShadowEffect Color="White" BlurRadius="2" ShadowDepth="3"/>
+            </Label.Effect>
+        </Label>
 
     </Grid>
 </Window>

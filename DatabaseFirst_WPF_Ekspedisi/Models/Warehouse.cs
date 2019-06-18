@@ -22,12 +22,14 @@ namespace DatabaseFirst_WPF_Ekspedisi.Models
     
         public int ID { get; set; }
         public string NAME { get; set; }
-        public string PROVINCE { get; set; }
-        public string REGENCY { get; set; }
-        public string SUB_DISTRICT { get; set; }
-        public string LOCATION { get; set; }
+        public string PROVINCE_ID { get; set; }
+        public string REGENCY_ID { get; set; }
+        public string DISTRICT_ID { get; set; }
+        public string VILLAGE_ID { get; set; }
+        public string ADDRESS { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<BRANCH> BRANCHS { get; set; }
+        public virtual VILLAGE VILLAGE { get; set; }
     }
 }
